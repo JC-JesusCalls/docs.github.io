@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesus Calls — CMS Manual (Home & Humanitarian)</title>
+<title>Jesus Calls — CMS Manual (Home, Humanitarian & University)</title>
 <link href="https://fonts.cdnfonts.com/css/bl-melody" rel="stylesheet">
 <style>
     :root {
@@ -587,9 +587,28 @@
 </div>
 </div>
 
+<div class="nav-group">
+<button type="button" class="nav-parent" id="universityToggle" aria-expanded="false"
+          aria-controls="universitySubmenu">
+          University Page
+<span class="chevron" aria-hidden="true">▾</span>
+</button>
+<div class="nav-submenu collapsed" id="universitySubmenu">
+<a href="#p23"><span class="num">1</span> University Page — Overview</a>
+<a href="#p24"><span class="num">2</span> University</a>
+<a href="#p25"><span class="num">3</span> University Banner</a>
+<a href="#p26"><span class="num">4</span> University Institution (Tabs)</a>
+<a href="#p27"><span class="num">5</span> Story Block</a>
+<a href="#p28"><span class="num">6</span> Institution Details Block</a>
+<a href="#p29"><span class="num">7</span> Statistics Block</a>
+<a href="#p30"><span class="num">8</span> CTA Block</a>
+</div>
+</div>
+
 <div class="sep"></div>
 <a href="#p13"><span class="num">1</span> Quick How-To Recap - Homepage</a>
 <a href="#p22"><span class="num">2</span> Quick How-To Recap - Humanitarian Page</a>
+<a href="#p31"><span class="num">3</span> Quick How-To Recap - University Page</a>
 </div>
 </nav>
 
@@ -599,9 +618,10 @@
 <header class="hero" id="overview">
 <span class="eyebrow">Strapi CMS · jc-cms-backend</span>
 <h1>Jesus Calls Website<br>CMS User Manual</h1>
-<p>Every content type and field used by the <strong>Homepage</strong> and <strong>Humanitarian Page</strong> —
-        whether it's required, its default value, allowed values, and what it changes on the live site. Required /
-        Default values are taken directly from the Strapi schema files, so they're exact, not approximations.</p>
+<p>Every content type and field used by the <strong>Homepage</strong>, <strong>Humanitarian Page</strong> and
+<strong>University Page</strong> — whether it's required, its default value, allowed values, and what it changes on
+        the live site. Required / Default values are taken directly from the Strapi schema files, so they're exact, not
+        approximations.</p>
 <div class="hero-note">
         ⚠️ <span><b>Draft changes never appear on the site.</b> All types use Draft &amp; Publish — always <b>Save →
             Publish</b>. All types are localized (en / ta / hi / ml / te); check the locale dropdown before editing. A
@@ -1407,6 +1427,190 @@
 <td><code>shareImage</code></td>
 <td><span class="req-no">No</span></td>
 <td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sub" id="p1-12">
+<h3>1.12 Background Type component <span class="field-tag">shared.background-type</span></h3>
+<p class="note">Used for <code>desktop_image</code> / <code>mobile_image</code> on the University Banner and the
+<code>background_type</code> field on every University tab block. Strapi only shows the fields that match the
+        selected <code>background_type</code> — the others stay hidden.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Allowed values / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background_type</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>color</code></td>
+<td><code>image color gradient</code> — picks which field below is visible</td>
+</tr>
+<tr>
+<td><code>background_color</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Hex color picker. Visible only when <code>background_type = color</code></td>
+</tr>
+<tr>
+<td><code>background_image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Upload. Visible only when <code>background_type = image</code></td>
+</tr>
+<tr>
+<td><code>background_gradient</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Raw CSS gradient string. Visible only when <code>background_type = gradient</code></td>
+</tr>
+<tr>
+<td><code>image_gradient</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Raw CSS gradient string overlaid on top of <code>background_image</code>. Visible only when
+<code>background_type = image</code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sub" id="p1-13">
+<h3>1.13 Tagline component <span class="field-tag">shared.tagline</span></h3>
+<p class="note">Used for the University Banner's <code>tagline</code> field — a small eyebrow label above the
+        title. Same text-styling options as Text (1.1), plus its own background and border.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Allowed values / Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>The tagline text</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Hex color for the text itself</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>p</code></td>
+<td><code>h1 h2 h3 h4 h5 h6 p span</code></td>
+</tr>
+<tr>
+<td><code>desktopFontSize</code> / <code>tabFontSize</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Integer px</td>
+</tr>
+<tr>
+<td><code>mobileFontSize</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>12</code></td>
+<td>Integer px</td>
+</tr>
+<tr>
+<td><code>fontStyle</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>normal</code></td>
+<td><code>normal italic oblique</code></td>
+</tr>
+<tr>
+<td><code>textTransform</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>normal</code></td>
+<td><code>normal uppercase lowercase capitalize</code></td>
+</tr>
+<tr>
+<td><code>fontWeight</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>fw400</code></td>
+<td><code>fw300</code> … <code>fw900</code></td>
+</tr>
+<tr>
+<td><code>lineHeight</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>1.625</code></td>
+<td>Decimal</td>
+</tr>
+<tr>
+<td><code>textAlign</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td><code>right left center justified</code> — no schema default, set explicitly if the tagline looks
+        misaligned</td>
+</tr>
+<tr>
+<td><code>border</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Border Color component (1.6)</td>
+</tr>
+<tr>
+<td><code>background_color</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Brand Color component (1.5) — the tagline's own background pill</td>
+</tr>
+<tr>
+<td><code>borderRadius</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Integer px</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sub" id="p1-14">
+<h3>1.14 List Item component <span class="field-tag">shared.list-item</span></h3>
+<p class="note">Icon + label row. Used by <code>welcome_popup.features[]</code> (2.3) and by the University
+        Institution Details block's <code>features[]</code> (Part 6).</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>icon</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>IconHub picker (SVG)</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text component (1.1)</td>
+</tr>
+<tr>
+<td><code>slugName</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Internal reference string</td>
 </tr>
 </tbody>
 </table>
@@ -4327,6 +4531,632 @@
 </div>
 </section>
 
+<!-- =============================================================== -->
+<!-- ============ UNIVERSITY PAGE — PARTS 23-31 ============ -->
+<!-- =============================================================== -->
+
+<!-- Summary table -->
+<section class="part" id="p23" style="border-bottom:1px solid var(--line); padding-top:0;">
+<div class="part-kicker">University Page — Overview</div>
+<h2>Content Types</h2>
+<p class="lede">The University page is composed of the following Single-Type and Collection-Type content types.
+        Unlike Home Page and Humanitarian Page, not everything here is localized or schema-required — see the
+        callouts in each part below.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Content Type</th>
+<th>Kind</th>
+<th>API</th>
+<th>Controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>University</td>
+<td>Single</td>
+<td><code>/university</code></td>
+<td>Page shell — <code>pageBase</code> + section order (⚠️ not localized, see Part 1)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>University Banner</td>
+<td>Single</td>
+<td><code>/university-banner</code></td>
+<td>Hero banner — background, tagline, title, description</td>
+</tr>
+<tr>
+<td>3</td>
+<td>University Institution</td>
+<td>Collection</td>
+<td><code>/university-institutions</code></td>
+<td>One entry = one tab; each tab's content is a dynamic zone of blocks</td>
+</tr>
+<tr>
+<td>4</td>
+<td>University Story Type</td>
+<td>Collection</td>
+<td>—</td>
+<td>Individual testimony videos (attached via the Story block)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- ============ PART 24 — UNIVERSITY (PAGE SHELL) ============ -->
+<section class="part" id="p24">
+<div class="part-kicker">Part 1</div>
+<h2>University</h2>
+<span class="endpoint">/university</span>
+<p class="lede">Single type. Page shell for the University page — sets the page slug, base metadata and which
+        sections appear, the same idea as Home Page (Part 3) and Humanitarian Page (Part 1).</p>
+
+<div class="callout">⚠️ <b>Not localized.</b> Unlike every other page shell in this manual, the University content
+        type has no i18n setting — there is only <b>one</b> copy of <code>pageBase</code>, shared by every locale.
+        Editing <code>pageTitle</code>, <code>slug</code>, <code>seo</code> or <code>isPublished</code> here changes
+        the page for <b>all</b> languages at once; there's no per-locale version to switch between.</div>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pageBase</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Page Base component below. Optional at the schema level here — unlike Home Page/Humanitarian Page where
+        it's required — but the page has no metadata without it</td>
+</tr>
+</tbody>
+</table>
+
+<div class="sub">
+<h3><code>pageBase</code> <span class="field-tag">shared.page-base</span></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pageTitle</code></td>
+<td><span class="req-yes">Yes</span></td>
+<td>—</td>
+<td>Browser/page title</td>
+</tr>
+<tr>
+<td><code>slug</code></td>
+<td><span class="req-yes">Yes</span></td>
+<td>—</td>
+<td>Page identifier</td>
+</tr>
+<tr>
+<td><code>backgroundColor</code></td>
+<td><span class="req-no">No</span></td>
+<td>— (token default purple-500)</td>
+<td>Brand Color (1.5)</td>
+</tr>
+<tr>
+<td><code>primaryColor</code></td>
+<td><span class="req-no">No</span></td>
+<td>— (token default purple-500)</td>
+<td>Brand Color (1.5)</td>
+</tr>
+<tr>
+<td><code>seo</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>SEO (1.11) — if added, metaTitle + metaDescription become required</td>
+</tr>
+<tr>
+<td><code>isPublished</code></td>
+<td><span class="req-no">No</span></td>
+<td><code>false</code></td>
+<td>Master page flag — <b>set to true</b> or the page is treated as unpublished</td>
+</tr>
+<tr>
+<td><code>sectionOrder[]</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>See below</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="sub">
+<h3><code>sectionOrder[]</code> <span class="field-tag">blocks.section-order</span></h3>
+<p class="note">Currently used for the University Banner. Give it an entry with <code>sectionKey =
+<code>universityBanner</code></code> (the frontend also still recognizes the legacy key
+<code>universityHero</code> for backward compatibility) and <code>url = university-banner</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Display position; lower numbers first</td>
+</tr>
+<tr>
+<td><code>sectionKey</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Use <code>universityBanner</code> — do not invent a new key</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td><code>true</code> show / <code>false</code> hide</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Section API path the frontend fetches for this key — do not change</td>
+</tr>
+</tbody>
+</table>
+<div class="callout"><b>Hide the banner:</b> set that entry's <code>enabled = false</code> instead of deleting the
+        row.</div>
+</div>
+</section>
+
+<!-- ============ PART 25 — UNIVERSITY BANNER ============ -->
+<section class="part" id="p25">
+<div class="part-kicker">Part 2</div>
+<h2>University Banner</h2>
+<span class="endpoint">/university-banner</span>
+<p class="lede">Hero banner at the top of the University page — a background (image, color or gradient) with a
+        tagline, title and description. Reached via the <code>pageBase → sectionOrder</code> entry described above.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>universityBanner</code></td>
+<td><span class="req-no">No</span></td>
+<td>— (component below)</td>
+<td>Optional at the schema level — unlike Hero Banner's equivalent field, which is required — but leave it
+        filled or the banner is empty</td>
+</tr>
+</tbody>
+</table>
+
+<div class="sub">
+<h3><code>universityBanner</code> <span class="field-tag">blocks.university-banner</span></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Media upload — the banner photo</td>
+</tr>
+<tr>
+<td><code>tagline</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Tagline component (1.13) — small eyebrow text above the title</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1) — main banner headline. Use <code>\n</code> for a line break</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1) — note this uses the Text component, not Description (1.2), so it's built for short
+        copy rather than long paragraphs</td>
+</tr>
+<tr>
+<td><code>desktop_image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Background Type (1.12) — background shown on desktop viewports</td>
+</tr>
+<tr>
+<td><code>mobile_image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Background Type (1.12) — background shown on mobile viewports</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============ PART 26 — UNIVERSITY INSTITUTION (TABS) ============ -->
+<section class="part" id="p26">
+<div class="part-kicker">Part 3</div>
+<h2>University Institution <span class="field-tag">collection type</span></h2>
+<span class="endpoint">/university-institutions</span>
+<p class="lede">One entry = one tab in the University page's tabbed section. The frontend fetches every entry in
+        one call, sorts them by <code>order_no</code>, labels each tab with <code>tab_label</code>, and renders only
+        the active tab's <code>section[]</code> blocks.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>order_no</code></td>
+<td><span class="req-yes">Yes</span></td>
+<td>—</td>
+<td>Integer — tab position, lower first. Not schema-validated as unique; keep the numbers unique
+        yourself or tab order becomes unpredictable</td>
+</tr>
+<tr>
+<td><code>tab_label</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1) — the clickable tab label</td>
+</tr>
+<tr>
+<td><code>section[]</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Dynamic zone — add any mix of the four block types covered in Parts 4–7 below, in any order. A tab
+        isn't limited to exactly one of each</td>
+</tr>
+</tbody>
+</table>
+<div class="callout"><b>Add a tab:</b> Content Manager → University Institution → Create new → set a unique
+<code>order_no</code> → fill <code>tab_label</code> → add blocks under <code>section[]</code> → Save → Publish.</div>
+</section>
+
+<!-- ============ PART 27 — STORY BLOCK ============ -->
+<section class="part" id="p27">
+<div class="part-kicker">Part 4</div>
+<h2>Story Block <span class="field-tag">blocks.university-story</span></h2>
+<p class="lede">A testimonial/video gallery for a tab — a title, description and one or more videos pulled from
+        the University Story Type collection.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1)</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Description (1.2)</td>
+</tr>
+<tr>
+<td><code>university_story_types</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Relation → University Story Type collection (multiple) — pick which story videos appear in this
+        tab</td>
+</tr>
+<tr>
+<td><code>background_type</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Background Type (1.12)</td>
+</tr>
+</tbody>
+</table>
+
+<div class="sub">
+<h3>University Story Type <span class="field-tag">collection type</span></h3>
+<p class="note">One entry per testimony video, attached to a Story block through the relation above.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Thumbnail shown before the video plays (images, files, videos or audios upload)</td>
+</tr>
+<tr>
+<td><code>video_url</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Plain string — full Vimeo or YouTube URL</td>
+</tr>
+<tr>
+<td><code>opacity</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Decimal overlay opacity on the thumbnail. <b>No schema default</b> (unlike the equivalent
+        Humanitarian field, which defaults to 1) — set it explicitly or it will read as empty</td>
+</tr>
+</tbody>
+</table>
+<div class="callout"><b>Add a story video:</b> Content Manager → University Story Type → Create new → upload
+<code>image</code> → paste <code>video_url</code> → Save → Publish → open the relevant tab's Story block → attach it
+        under <code>university_story_types</code> → Publish.</div>
+</div>
+</section>
+
+<!-- ============ PART 28 — INSTITUTION DETAILS BLOCK ============ -->
+<section class="part" id="p28">
+<div class="part-kicker">Part 5</div>
+<h2>Institution Details Block <span class="field-tag">blocks.university-institutions</span></h2>
+<p class="lede">An institution's detail panel inside a tab — text, a feature list, a video and a CTA button.</p>
+
+<div class="callout">⚠️ <b>Naming clash — read carefully:</b> "University Institution" (Part 3) is the
+<i>collection type</i> that holds the tabs. <code>blocks.university-institutions</code> (this block) is one of
+        the four block types you can drop inside a tab's <code>section[]</code> dynamic zone. They are two different
+        things that happen to share almost the same name.</div>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1)</td>
+</tr>
+<tr>
+<td><code>videoUrl</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Plain string — full Vimeo or YouTube URL</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Media upload</td>
+</tr>
+<tr>
+<td><code>ctaButton</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Button (1.3)</td>
+</tr>
+<tr>
+<td><code>features[]</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>List Item (1.14), repeatable</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Description (1.2)</td>
+</tr>
+<tr>
+<td><code>background_type</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Background Type (1.12)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- ============ PART 29 — STATISTICS BLOCK ============ -->
+<section class="part" id="p29">
+<div class="part-kicker">Part 6</div>
+<h2>Statistics Block <span class="field-tag">blocks.university-statistics-section</span></h2>
+<p class="lede">An impact counter strip inside a tab — same shape and fields as the
+<a href="#p18">Humanitarian Statistics Section</a>.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1)</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Description (1.2)</td>
+</tr>
+<tr>
+<td><code>statistics[]</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>shared.statistics, repeatable — icon + value + text + description per card, see the
+<a href="#p18">Humanitarian Statistics Section</a> for the full field breakdown</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<!-- ============ PART 30 — CTA BLOCK ============ -->
+<section class="part" id="p30">
+<div class="part-kicker">Part 7</div>
+<h2>CTA Block <span class="field-tag">blocks.university-cta-section</span></h2>
+<p class="lede">A call-to-action panel inside a tab — heading, description and a button, over a configurable
+        background.</p>
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Text (1.1) — CTA headline</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Description (1.2)</td>
+</tr>
+<tr>
+<td><code>button</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Button (1.3)</td>
+</tr>
+<tr>
+<td><code>background_type</code></td>
+<td><span class="req-no">No</span></td>
+<td>—</td>
+<td>Background Type (1.12)</td>
+</tr>
+</tbody>
+</table>
+
+<!-- University quick recap -->
+<div class="sub" style="margin-top:40px" id="p31">
+<h3>Quick How-To Recap — University Page</h3>
+<table class="recap-table">
+<thead>
+<tr>
+<th>Task</th>
+<th>Where</th>
+<th>Watch out for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Change the banner photo/color/gradient</td>
+<td>University Banner → universityBanner → desktop_image / mobile_image</td>
+<td>Pick <code>background_type</code> first — only the matching field (image / color / gradient) shows</td>
+</tr>
+<tr>
+<td>Edit the banner tagline or title</td>
+<td>University Banner → universityBanner → tagline / title</td>
+<td>Tagline (1.13) adds its own background + border on top of the usual Text (1.1) options</td>
+</tr>
+<tr>
+<td>Reorder or hide the banner</td>
+<td>University → pageBase → sectionOrder → order / enabled</td>
+<td><code>sectionKey</code> must stay <code>universityBanner</code> — don't invent a new key</td>
+</tr>
+<tr>
+<td>Add a new institution tab</td>
+<td>University Institution → Create new → order_no + tab_label</td>
+<td><code>order_no</code> is required and controls position; Strapi won't stop you reusing a number, so
+        keep them unique yourself</td>
+</tr>
+<tr>
+<td>Build out a tab's content</td>
+<td>University Institution → section[] → add block</td>
+<td>Mix any of Story / Institution Details / Statistics / CTA blocks, in any order</td>
+</tr>
+<tr>
+<td>Add a testimonial video to a tab</td>
+<td>University Story Type → Create → attach under that tab's Story block →
+<code>university_story_types</code></td>
+<td><code>opacity</code> has no schema default — set it explicitly (e.g. <code>1</code>)</td>
+</tr>
+<tr>
+<td>Add a feature bullet to an Institution Details block</td>
+<td>Institution Details block → features[] → add entry</td>
+<td>List Item (1.14): icon + label + slugName, all optional</td>
+</tr>
+<tr>
+<td>Add a stat counter to a tab</td>
+<td>Statistics block → statistics[] → add entry</td>
+<td>Same shared.statistics fields as the Humanitarian Statistics Section</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout" style="margin-top:24px">
+<b>Troubleshooting — University Page</b><br><br>
+<b>Edits not showing on the other language tabs?</b> The University page shell (<code>pageBase</code>) is
+<b>not localized</b> — it's shared across every locale, so this is expected, not a bug.<br>
+<b>Banner not showing?</b> Check <code>pageBase → sectionOrder</code> has an enabled entry with
+<code>sectionKey = universityBanner</code> and a valid <code>url</code>.<br>
+<b>A tab's content is empty?</b> The University Institution entry must be Published and its
+<code>section[]</code> dynamic zone needs at least one block added.<br>
+<b>Story video not playing?</b> <code>video_url</code> must be a full Vimeo or YouTube URL.<br>
+<b>Tabs in the wrong order?</b> Check <code>order_no</code> on each University Institution entry for
+        duplicates or gaps.
+</div>
+</div>
+</section>
+
 </div>
 
 <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top">↑</a>
@@ -4359,6 +5189,15 @@
       const expanded = humanitarianToggle.getAttribute('aria-expanded') === 'true';
       humanitarianToggle.setAttribute('aria-expanded', String(!expanded));
       humanitarianSubmenu.classList.toggle('collapsed', expanded);
+    });
+
+    // University Page submenu toggle
+    const universityToggle = document.getElementById('universityToggle');
+    const universitySubmenu = document.getElementById('universitySubmenu');
+    universityToggle.addEventListener('click', () => {
+      const expanded = universityToggle.getAttribute('aria-expanded') === 'true';
+      universityToggle.setAttribute('aria-expanded', String(!expanded));
+      universitySubmenu.classList.toggle('collapsed', expanded);
     });
 
     // Back-to-top visibility
@@ -4394,6 +5233,13 @@
             humanitarianSubmenu.classList.remove('collapsed');
           } else {
             humanitarianToggle.classList.remove('active');
+          }
+          if (universitySubmenu.contains(link)) {
+            universityToggle.classList.add('active');
+            universityToggle.setAttribute('aria-expanded', 'true');
+            universitySubmenu.classList.remove('collapsed');
+          } else {
+            universityToggle.classList.remove('active');
           }
         }
       });
