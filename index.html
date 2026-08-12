@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jesus Calls — CMS Manual (Home, Humanitarian & University)</title>
+    <title>Jesus Calls — CMS Manual (Home, Humanitarian, University, Donate & Bible)</title>
     <link href="https://fonts.cdnfonts.com/css/bl-melody" rel="stylesheet" />
     <style>
       :root {
@@ -636,6 +636,54 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="donatePageToggle"
+            aria-expanded="false"
+            aria-controls="donatePageSubmenu"
+          >
+            Donate Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="donatePageSubmenu">
+            <a href="#p32"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p33"><span class="num">2</span> Donate Page</a>
+            <a href="#p34"><span class="num">3</span> Impact Status Ticker</a>
+            <a href="#p35"><span class="num">4</span> Donate Hero Section</a>
+            <a href="#p36"
+              ><span class="num">5</span> Give Other Ways Section</a
+            >
+            <a href="#p37"
+              ><span class="num">6</span> Donation Impact Section</a
+            >
+            <a href="#p38"
+              ><span class="num">7</span> Membership &amp; Academy Section</a
+            >
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="biblePageToggle"
+            aria-expanded="false"
+            aria-controls="biblePageSubmenu"
+          >
+            Bible Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="biblePageSubmenu">
+            <a href="#p40"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p41"><span class="num">2</span> Bible Page</a>
+            <a href="#p42"><span class="num">3</span> Magazine CTA Banner</a>
+            <a href="#p43"><span class="num">4</span> Bible Banner</a>
+            <a href="#p44"><span class="num">5</span> Bible Content</a>
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -645,6 +693,12 @@
         >
         <a href="#p31"
           ><span class="num">3</span> Quick How-To Recap - University Page</a
+        >
+        <a href="#p39"
+          ><span class="num">4</span> Quick How-To Recap - Donate Page</a
+        >
+        <a href="#p45"
+          ><span class="num">5</span> Quick How-To Recap - Bible Page</a
         >
       </div>
     </nav>
@@ -5828,6 +5882,1993 @@
           </div>
         </div>
       </section>
+
+      <!-- ============ PART 32 — DONATE PAGE OVERVIEW ============ -->
+      <section
+        class="part"
+        id="p32"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Donate Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Donate page is composed of the following Single-Type and
+          Collection-Type content types. All types use Draft &amp; Publish and
+          are localized (en / ta / hi / ml / te).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Donate Page</td>
+              <td>Single</td>
+              <td><code>/donate-page</code></td>
+              <td>Page base + section order (page shell only)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Impact Status Ticker</td>
+              <td>Single</td>
+              <td><code>/impact-status-ticker</code></td>
+              <td>Ticker settings + items from collection below</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Impact Status Item</td>
+              <td>Collection</td>
+              <td>—</td>
+              <td>Individual stat entries</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Donate Hero Section</td>
+              <td>Single</td>
+              <td><code>/donate-hero-section</code></td>
+              <td>Hero title, project carousel, quote, tab toggle, donation form links</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Contact Form</td>
+              <td>Collection</td>
+              <td>—</td>
+              <td>Shared form builder — used here for the donation form and hero popup form</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Give Other Ways Section</td>
+              <td>Single</td>
+              <td><code>/give-other-ways-section</code></td>
+              <td>Scan &amp; Donate, Bank Transfer, Cheque/DD, help banner</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Donation Impact Section</td>
+              <td>Single</td>
+              <td><code>/donation-impact-section</code></td>
+              <td>Section settings + items from collection below</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Donation Impact Item</td>
+              <td>Collection</td>
+              <td>—</td>
+              <td>Individual impact video cards</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Membership &amp; Academy Section</td>
+              <td>Single</td>
+              <td><code>/membership-academy-section</code></td>
+              <td>Section settings + items from collection below</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Membership Academy Item</td>
+              <td>Collection</td>
+              <td>—</td>
+              <td>Individual CTA cards ("Become a Member", etc.)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          ⚠️ <b>Donate Page's <code>sectionOrder</code> is pointers only —
+          not relations.</b> Unlike Humanitarian and University,
+          <code>donate-page</code> holds no Strapi relation to the 5 section
+          APIs above; the frontend independently fetches each
+          <code>sectionOrder[].url</code>. Publishing
+          <code>donate-page</code> alone does <b>not</b> populate the page —
+          every section content type must be published on its own as well.
+        </div>
+      </section>
+
+      <!-- ============ PART 33 — DONATE PAGE ============ -->
+      <section class="part" id="p33">
+        <div class="part-kicker">Part 1</div>
+        <h2>Donate Page</h2>
+        <span class="endpoint">/donate-page</span>
+        <p class="lede">
+          Single type. Page shell only — sets page identity, theme and the
+          section order list. Each section's actual content lives in its own
+          content type, documented in Parts 2–6 below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageBase</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Page Base component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>pageBase</code>
+            <span class="field-tag">shared.page-base</span>
+          </h3>
+          <p class="note">
+            Controls the Donate page identity, theme, SEO, publication flag
+            and section ordering.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>pageTitle</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Browser/page title for the Donate page</td>
+              </tr>
+              <tr>
+                <td><code>slug</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Page identifier used by the frontend</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default)</td>
+                <td>Brand Color (1.5) — page background theme color</td>
+              </tr>
+              <tr>
+                <td><code>primaryColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default)</td>
+                <td>Brand Color (1.5) — primary page theme color</td>
+              </tr>
+              <tr>
+                <td><code>seo</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  SEO (1.11) — if added, <code>metaTitle</code> and
+                  <code>metaDescription</code> are required
+                </td>
+              </tr>
+              <tr>
+                <td><code>isPublished</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>false</code></td>
+                <td>
+                  Master page flag — <b>set to true</b> or the frontend treats
+                  the page as unpublished
+                </td>
+              </tr>
+              <tr>
+                <td><code>sectionOrder[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Repeatable section-order component — detailed below</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>sectionOrder[]</code>
+            <span class="field-tag">blocks.section-order</span>
+          </h3>
+          <p class="note">
+            One entry controls one Donate page section. Keep the section key
+            and API URL expected by the frontend; use only the order and
+            enabled fields for routine CMS changes.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Display position; lower numbers appear first</td>
+              </tr>
+              <tr>
+                <td><code>sectionKey</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Frontend section identifier — do not rename or invent a new
+                  key
+                </td>
+              </tr>
+              <tr>
+                <td><code>enabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <code>true</code> shows the section; <code>false</code>
+                  hides it
+                </td>
+              </tr>
+              <tr>
+                <td><code>url</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Section API path used by the frontend — do not change</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Reorder sections:</b> change the <code>order</code> values.
+            <b>Hide a section:</b> set <code>enabled = false</code> instead of
+            deleting the row.
+          </div>
+        </div>
+
+        <div class="callout">
+          ⚠️ <b>Set <code>pageBase.isPublished = true</code></b> or the
+          frontend treats the page as unpublished even after clicking Publish
+          in Strapi. Also double-check <code>slug</code> for stray leading or
+          trailing spaces (e.g. <code>"Donation Page "</code>) — a trailing
+          space is easy to enter by mistake and can break exact-match
+          routing/lookups.
+        </div>
+      </section>
+
+      <!-- ============ PART 34 — IMPACT STATUS TICKER ============ -->
+      <section class="part" id="p34">
+        <div class="part-kicker">Part 2</div>
+        <h2>Impact Status Ticker</h2>
+        <span class="endpoint">/impact-status-ticker</span>
+        <p class="lede">
+          Single type. Scrolling ticker of impact stats (e.g. "14 mil Bibles
+          Distributed") along the top of the Donate page. Items are managed
+          in the Impact Status Item collection and linked here.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>impactStatusTicker</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Impact Status Ticker component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>impactStatusTicker</code>
+            <span class="field-tag">blocks.impact-status-ticker</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Toggle this section on or off on the page</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color picker for the ticker strip</td>
+              </tr>
+              <tr>
+                <td><code>animationDuration</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>30</code></td>
+                <td>Seconds for one full scroll cycle</td>
+              </tr>
+              <tr>
+                <td><code>animationDirection</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>left</code></td>
+                <td>Enum: <code>left</code> or <code>right</code></td>
+              </tr>
+              <tr>
+                <td><code>itemSpacing</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>48</code></td>
+                <td>Pixel spacing between ticker items</td>
+              </tr>
+              <tr>
+                <td><code>items</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Relation → Impact Status Item collection (multiple) —
+                  detailed below
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Impact Status Item <span class="field-tag">collection type</span>
+          </h3>
+          <p class="note">
+            One entry per stat, attached to the ticker through the relation
+            above.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>value</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "14 mil"</td>
+              </tr>
+              <tr>
+                <td><code>label</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Bibles Distributed"</td>
+              </tr>
+              <tr>
+                <td><code>isActive</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>true</code></td>
+                <td>Set <code>false</code> to hide without deleting</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>0</code></td>
+                <td>Integer — scroll sequence position</td>
+              </tr>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string identifier</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Add a stat:</b> Content Manager → Impact Status Item → Create
+            new → fill <code>value</code> / <code>label</code> → Save →
+            Publish → attach it under Impact Status Ticker →
+            <code>items</code> → Publish.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 35 — DONATE HERO SECTION ============ -->
+      <section class="part" id="p35">
+        <div class="part-kicker">Part 3</div>
+        <h2>Donate Hero Section</h2>
+        <span class="endpoint">/donate-hero-section</span>
+        <p class="lede">
+          Single type. Hero title/description, the "Project of the Month"
+          auto-scrolling carousel, a scripture quote, the One Time/Monthly
+          tab toggle, and the donation form.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>donateHero</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Donate Hero Section component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>donateHero</code>
+            <span class="field-tag">blocks.donate-hero-section</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Toggle this section on or off on the page</td>
+              </tr>
+              <tr>
+                <td><code>background</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain text</td>
+              </tr>
+              <tr>
+                <td><code>heroTitle</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>heroSubtitle</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>heroDescription</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>projectSlides[]</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Repeatable — Project Slide, detailed below</td>
+              </tr>
+              <tr>
+                <td><code>projectAutoPlayMs</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>5000</code></td>
+                <td>Milliseconds per carousel slide (min 1000)</td>
+              </tr>
+              <tr>
+                <td><code>projectShowDotNav</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Show dot navigation under the carousel</td>
+              </tr>
+              <tr>
+                <td><code>quote</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Scripture Quote — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>tabToggle</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>One Time/Monthly Tab Toggle — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>donation_forms</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Relation → Contact Form collection (multiple) — the
+                  donation form(s) shown in the hero
+                </td>
+              </tr>
+              <tr>
+                <td><code>popup_contact_form</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Relation → Contact Form collection (single) — form shown in
+                  a popup
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Project Slide
+            <span class="field-tag">blocks.donate-project-slide</span>
+          </h3>
+          <p class="note">
+            One slide in the "Project of the Month" carousel, repeatable.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>media</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Media (1.4) — image, YouTube/Vimeo or uploaded video</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5) — behind the slide's text panel</td>
+              </tr>
+              <tr>
+                <td><code>eyebrow</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Project of the Month"</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>0</code></td>
+                <td>
+                  Slide order — drag-reorder is disabled admin-wide, so set
+                  this explicitly
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>Scripture Quote <span class="field-tag">blocks.donate-quote</span></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Text (1.1) — quote text, e.g. "A generous person shall
+                  prosper"
+                </td>
+              </tr>
+              <tr>
+                <td><code>body</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — citation, e.g. "Proverbs 11:25"</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>decorIcon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Optional decorative icon (e.g. a cross)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            One Time/Monthly Tab Toggle
+            <span class="field-tag">blocks.donate-tab-toggle</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>oneTimeLabel</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "One Time"</td>
+              </tr>
+              <tr>
+                <td><code>monthlyLabel</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Monthly"</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>activeBgColor</code> / <code>activeTextColor</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5) — colors of the selected tab</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>inactiveBgColor</code> /
+                  <code>inactiveTextColor</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5) — colors of the unselected tab</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            ⚠️ <b>Cosmetic toggle only.</b> This block controls the visual
+            One Time/Monthly tab labels and colors — it does not change how
+            the donation itself is processed on the backend.
+          </div>
+        </div>
+
+        <div class="sub">
+          <h3>Contact Form <span class="field-tag">collection type</span></h3>
+          <p class="note">
+            Shared form-builder content type used sitewide, not exclusive to
+            the Donate page. Attach existing entries under
+            <code>donation_forms</code> and <code>popup_contact_form</code>
+            above.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>form[]</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>
+                  Dynamic zone — mix any of: Text Area Field, Input Field,
+                  Button, Drop-down Field, Radio Button, Add Member Field,
+                  Form Section Label, Form Agreement, Text, in any order
+                </td>
+              </tr>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Plain string identifier</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Attach the donation form:</b> the Contact Form entry must
+            already exist and be Published before it will render — attaching
+            an unpublished form under <code>donation_forms</code> /
+            <code>popup_contact_form</code> renders nothing on the frontend.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 36 — GIVE OTHER WAYS SECTION ============ -->
+      <section class="part" id="p36">
+        <div class="part-kicker">Part 4</div>
+        <h2>Give Other Ways Section</h2>
+        <span class="endpoint">/give-other-ways-section</span>
+        <p class="lede">
+          Single type. Alternative giving methods below the hero — Scan &amp;
+          Donate, Bank Transfer, and MO/Cheque/DD cards, plus a shared help
+          banner. Self-contained — no separate linked collection type.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>giveOtherWays</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Give Other Ways Section component — detailed below</td>
+            </tr>
+            <tr>
+              <td><code>CopyIcon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Icon shown next to every copyable field in this section
+                (Copy Field components below)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>giveOtherWays</code>
+            <span class="field-tag">blocks.give-other-ways-section</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Toggle this section on or off on the page</td>
+              </tr>
+              <tr>
+                <td><code>header</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Section Header — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>scanDonate</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Scan &amp; Donate Card — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>bankTransfer</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Bank Transfer Card — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>chequeDd</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Cheque/DD Card — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>helpBanner</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Give Help Banner — detailed below</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Section Header <span class="field-tag">shared.section-header</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>subtitle</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Scan &amp; Donate Card
+            <span class="field-tag">blocks.give-scan-donate</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>backgroundImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Image shown at the top of the card</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Scan &amp; Donate"</td>
+              </tr>
+              <tr>
+                <td><code>qrCode</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Image upload</td>
+              </tr>
+              <tr>
+                <td><code>payText</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Scan &amp; Pay instantly via UPI"</td>
+              </tr>
+              <tr>
+                <td><code>paymentApps[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable — one entry per payment app logo (icon + name),
+                  e.g. PhonePe, GPay, Paytm, BHIM
+                </td>
+              </tr>
+              <tr>
+                <td><code>upiId</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Copy Field — detailed below</td>
+              </tr>
+              <tr>
+                <td><code>ctaButton</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — e.g. "Donate via UPI"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Bank Transfer Card
+            <span class="field-tag">blocks.give-bank-transfer</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>backgroundImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Image shown at the top of the card</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Bank Transfer"</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>fields[]</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable Copy Field — Beneficiary, Bank Name, Account
+                  Number, IFSC; add/remove/reorder as needed
+                </td>
+              </tr>
+              <tr>
+                <td><code>whatsappImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Icon/image next to the WhatsApp note</td>
+              </tr>
+              <tr>
+                <td><code>whatsappNote</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>whatsappPhone</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Cheque/DD Card <span class="field-tag">blocks.give-cheque-dd</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>backgroundImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Image shown at the top of the card</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "MO / Cheque / DD"</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>fields[]</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable Copy Field — "Write in Favour Of" and "To"
+                  (postal address); add/remove/reorder as needed
+                </td>
+              </tr>
+              <tr>
+                <td><code>ctaButton</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Give Help Banner
+            <span class="field-tag">blocks.give-help-banner</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Icon shown next to the message</td>
+              </tr>
+              <tr>
+                <td><code>message</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>callPhone</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>whatsappPhone</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>whatsappHours</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Plain, unstyled string — e.g. "(8 AM to 8 PM)"
+                </td>
+              </tr>
+              <tr>
+                <td><code>email</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Copy Field <span class="field-tag">shared.copy-field</span>
+          </h3>
+          <p class="note">
+            A labeled value with an optional copy-to-clipboard icon, used by
+            the Bank Transfer and Cheque/DD cards.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>label</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>e.g. "Account Number", "IFSC", "Beneficiary"</td>
+              </tr>
+              <tr>
+                <td><code>value</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Supports multi-line, e.g. for a postal address</td>
+              </tr>
+              <tr>
+                <td><code>showCopyIcon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Set <code>false</code> to hide the clipboard icon on rows that aren't meant to be copied</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <b>Add or edit a bank/postal detail row:</b> Give Other Ways Section
+          → <code>bankTransfer</code> or <code>chequeDd</code> →
+          <code>fields[]</code> → add/edit a Copy Field entry → Save →
+          Publish.
+        </div>
+      </section>
+
+      <!-- ============ PART 37 — DONATION IMPACT SECTION ============ -->
+      <section class="part" id="p37">
+        <div class="part-kicker">Part 5</div>
+        <h2>Donation Impact Section</h2>
+        <span class="endpoint">/donation-impact-section</span>
+        <p class="lede">
+          Single type. Horizontal gallery of impact video cards. Cards are
+          managed in the Donation Impact Item collection and linked here.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>donationImpact</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Donation Impact Section component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>donationImpact</code>
+            <span class="field-tag">blocks.donation-impact-section</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Toggle this section on or off on the page</td>
+              </tr>
+              <tr>
+                <td><code>sectionTitle</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Donation Impacts"</td>
+              </tr>
+              <tr>
+                <td><code>sectionSubtitle</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color picker</td>
+              </tr>
+              <tr>
+                <td><code>maxItems</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>8</code></td>
+                <td>
+                  Maximum impact cards shown in the gallery — caps display
+                  even if more entries exist
+                </td>
+              </tr>
+              <tr>
+                <td><code>items</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Relation → Donation Impact Item collection (multiple) —
+                  detailed below
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Donation Impact Item
+            <span class="field-tag">collection type</span>
+          </h3>
+          <p class="note">
+            One entry per impact video card, attached through the relation
+            above.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>media</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Media (1.4) — thumbnail image, or video with play button</td>
+              </tr>
+              <tr>
+                <td><code>caption</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "2000+ Meals Distributed"</td>
+              </tr>
+              <tr>
+                <td><code>meta</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Name-Dot-Date (1.10) — e.g. "15 Min | 18 May 2026"</td>
+              </tr>
+              <tr>
+                <td><code>isActive</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>true</code></td>
+                <td>Set <code>false</code> to hide without deleting</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>0</code></td>
+                <td>Integer — gallery position</td>
+              </tr>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string identifier</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Add an impact card:</b> Content Manager → Donation Impact Item
+            → Create new → upload <code>media</code> → fill
+            <code>caption</code> → Save → Publish → attach it under Donation
+            Impact Section → <code>items</code> → Publish.
+            <code>maxItems</code> caps how many display even if more entries
+            exist.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 38 — MEMBERSHIP & ACADEMY SECTION ============ -->
+      <section class="part" id="p38">
+        <div class="part-kicker">Part 6</div>
+        <h2>Membership &amp; Academy Section</h2>
+        <span class="endpoint">/membership-academy-section</span>
+        <p class="lede">
+          Single type. Row of CTA cards (Become a Member, Enroll in Prayer
+          Training Academy, etc.) sharing one section background. Cards are
+          managed in the Membership Academy Item collection and linked here.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>membershipAcademy</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Membership &amp; Academy Section component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>membershipAcademy</code>
+            <span class="field-tag">blocks.membership-academy-section</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>isEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Toggle this section on or off on the page</td>
+              </tr>
+              <tr>
+                <td><code>background</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Background Type (1.12) — shared background behind all cards
+                </td>
+              </tr>
+              <tr>
+                <td><code>maxItems</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>4</code></td>
+                <td>
+                  Maximum cards shown — caps display even if more entries
+                  exist
+                </td>
+              </tr>
+              <tr>
+                <td><code>items</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Relation → Membership Academy Item collection (multiple) —
+                  detailed below
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Membership Academy Item
+            <span class="field-tag">collection type</span>
+          </h3>
+          <p class="note">
+            One entry per CTA card, attached through the relation above.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — e.g. "Become a Member"</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>cta</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Button (1.3) — e.g. "Join Now" / "Enroll Now"</td>
+              </tr>
+              <tr>
+                <td><code>isActive</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>true</code></td>
+                <td>Set <code>false</code> to hide without deleting</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>0</code></td>
+                <td>Integer — card position</td>
+              </tr>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string identifier</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Add a CTA card:</b> Content Manager → Membership Academy Item →
+            Create new → fill <code>title</code> / <code>cta</code> → Save →
+            Publish → attach it under Membership &amp; Academy Section →
+            <code>items</code> → Publish.
+          </div>
+        </div>
+
+        <!-- Donate Page quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p39">
+          <h3>Quick How-To Recap — Donate Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reorder or hide a Donate page section</td>
+                <td>
+                  Donate Page → pageBase → sectionOrder → order / enabled
+                </td>
+                <td>
+                  <code>sectionKey</code> must stay exactly as-is — the
+                  frontend matches on this key, not on order
+                </td>
+              </tr>
+              <tr>
+                <td>Change the hero project carousel</td>
+                <td>Donate Hero Section → projectSlides[]</td>
+                <td>
+                  <code>order</code> is required for slide sequence —
+                  drag-reorder is disabled admin-wide
+                </td>
+              </tr>
+              <tr>
+                <td>Edit the scripture quote</td>
+                <td>Donate Hero Section → quote</td>
+                <td>
+                  <code>title</code> = quote text, <code>body</code> =
+                  citation — both Text (1.1)
+                </td>
+              </tr>
+              <tr>
+                <td>Attach the donation form</td>
+                <td>
+                  Donate Hero Section → donation_forms / popup_contact_form
+                </td>
+                <td>
+                  Both relate to Contact Form entries — the form must already
+                  be Published or it renders nothing
+                </td>
+              </tr>
+              <tr>
+                <td>Add or update a bank/cheque detail row</td>
+                <td>
+                  Give Other Ways Section → bankTransfer / chequeDd →
+                  fields[]
+                </td>
+                <td>
+                  Set <code>showCopyIcon = false</code> on rows that aren't
+                  meant to be copied
+                </td>
+              </tr>
+              <tr>
+                <td>Add an impact video card</td>
+                <td>
+                  Donation Impact Item → Create new → attach under Donation
+                  Impact Section → items
+                </td>
+                <td>
+                  <code>isActive = false</code> hides a card without deleting
+                  it
+                </td>
+              </tr>
+              <tr>
+                <td>Add a Membership/Academy CTA card</td>
+                <td>
+                  Membership Academy Item → Create new → attach under
+                  Membership &amp; Academy Section → items
+                </td>
+                <td>
+                  <code>maxItems</code> caps how many display even if more
+                  exist
+                </td>
+              </tr>
+              <tr>
+                <td>Add a ticker stat</td>
+                <td>
+                  Impact Status Item → Create new → attach under Impact
+                  Status Ticker → items
+                </td>
+                <td>
+                  <code>order</code> controls scroll sequence,
+                  <code>isActive</code> toggles visibility
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout" style="margin-top: 24px">
+            <b>Troubleshooting — Donate Page</b><br /><br />
+            <b>A section shows blank on the live page?</b> Each of the 5
+            sections is fetched independently by its own
+            <code>url</code> — check that specific section's own single type
+            is Published, not just <code>donate-page</code>.<br />
+            <b>Page not found / slug mismatch?</b> Check
+            <code>pageBase.slug</code> for a stray leading or trailing
+            space.<br />
+            <b>Donation form not appearing in the hero?</b> The attached
+            Contact Form entry under <code>donation_forms</code> /
+            <code>popup_contact_form</code> must itself be Published.<br />
+            <b>New impact/membership/ticker item not showing?</b> Confirm
+            <code>isActive = true</code> on the item, and check
+            <code>maxItems</code> on the parent section hasn't already been
+            filled by lower-<code>order</code> entries.
+              </div>
+      </section>
+    </div>
+
+      <!-- ============ PART 40 — BIBLE PAGE OVERVIEW ============ -->
+      <section
+        class="part"
+        id="p40"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Bible Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Bible page is a single content type — unlike Donate,
+          Humanitarian and University, it has no companion section APIs and
+          no <code>page-base</code>/<code>sectionOrder</code>. Everything
+          lives in one dynamic zone. Localized (en / ta / hi / ml / te), Draft
+          &amp; Publish enabled.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Bible</td>
+              <td>Single</td>
+              <td><code>/bible</code></td>
+              <td>
+                Page title, slug, SEO + <code>sections[]</code> dynamic zone
+                (banner, CTA banner, reader UI labels)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          ⚠️ <b>This content type has no public read permission configured.</b>
+          <code>api::bible.bible</code> does not appear in
+          <code>src/utils/ensure-public-permissions.js</code> at all — the
+          Public role has no <code>find</code> access, so
+          <code>GET /api/bible</code> currently 403s for anonymous requests
+          even though <code>jc-web-app</code>'s Bible page mapper
+          (<code>bible-page.mapper.ts</code>) depends on it. This is the same
+          class of gap previously found on the Humanitarian domain — add
+          <code>{ uid: "api::bible.bible", actions: ["find"] }</code> to the
+          allowlist to fix it.
+        </div>
+
+        <div class="callout">
+          <b>Scripture text is not stored here.</b> None of the fields below
+          hold actual verse/chapter content — <code>bible-content</code> is
+          just UI copy (button labels, tab labels, placeholders). The actual
+          Bible text, books and chapters are served separately by
+          <code>jc-core-backend</code>'s Bible module, which proxies the
+          Digital Bible Platform API. This CMS single type only controls the
+          static wrapper around that reader (banner + CTA + interface
+          labels).
+        </div>
+      </section>
+
+      <!-- ============ PART 41 — BIBLE PAGE ============ -->
+      <section class="part" id="p41">
+        <div class="part-kicker">Part 1</div>
+        <h2>Bible Page</h2>
+        <span class="endpoint">/bible</span>
+        <p class="lede">
+          Single type. Page identity, SEO and the ordered dynamic zone that
+          composes the page — no <code>page-base</code>/<code>sectionOrder</code>
+          wrapper like the other pages in this manual.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageTitle</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Browser/page title for the Bible page</td>
+            </tr>
+            <tr>
+              <td><code>slug</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Page identifier used by the frontend</td>
+            </tr>
+            <tr>
+              <td><code>seo</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>SEO (1.11)</td>
+            </tr>
+            <tr>
+              <td><code>sections[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Dynamic zone — mix any of Magazine CTA Banner, Bible Banner,
+                Bible Content, in any order, detailed in Parts 2–4 below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <b>No <code>isPublished</code> flag.</b> Unlike Donate,
+          Humanitarian and University (which gate visibility on
+          <code>pageBase.isPublished</code>), the Bible page has no such
+          field — publishing the entry itself (Strapi's normal Draft &amp;
+          Publish workflow) is what controls visibility.
+        </div>
+      </section>
+
+      <!-- ============ PART 42 — MAGAZINE CTA BANNER ============ -->
+      <section class="part" id="p42">
+        <div class="part-kicker">Part 2</div>
+        <h2>
+          Magazine CTA Banner
+          <span class="field-tag">blocks.magazine-cta-banner</span>
+        </h2>
+        <p class="lede">
+          A promotional strip that can be dropped into the Bible page's
+          dynamic zone — same component used on the E-Magazine flow, reused
+          here to cross-promote the magazine from the Bible reader.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>button</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          None of this block's fields are marked required in the schema —
+          an empty Magazine CTA Banner will still save and publish. Fill in
+          at least <code>title</code> and <code>button</code> or it renders
+          blank on the page.
+        </div>
+      </section>
+
+      <!-- ============ PART 43 — BIBLE BANNER ============ -->
+      <section class="part" id="p43">
+        <div class="part-kicker">Part 3</div>
+        <h2>Bible Banner <span class="field-tag">blocks.bible-banner</span></h2>
+        <p class="lede">
+          The hero banner at the top of the Bible page — tagline, title,
+          description over a configurable background, with separate image
+          overrides for mobile and tablet.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — desktop background</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>mobile_image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Background Type (1.12) — overrides <code>background</code>
+                on mobile viewports
+              </td>
+            </tr>
+            <tr>
+              <td><code>tab_image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Background Type (1.12) — overrides <code>background</code>
+                on tablet viewports
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <b>Set all three backgrounds.</b> If
+          <code>mobile_image</code>/<code>tab_image</code> are left empty,
+          those breakpoints fall back to whatever the frontend defaults to —
+          check the live page on a phone/tablet after publishing, not just
+          desktop.
+        </div>
+      </section>
+
+      <!-- ============ PART 44 — BIBLE CONTENT ============ -->
+      <section class="part" id="p44">
+        <div class="part-kicker">Part 4</div>
+        <h2>Bible Content <span class="field-tag">blocks.bible-content</span></h2>
+        <p class="lede">
+          Interface copy for the Bible reader itself — every field here is a
+          UI label, not scripture content. Add this block once to translate
+          the reader's buttons and labels per locale.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>prev_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3) — "Previous chapter" control</td>
+            </tr>
+            <tr>
+              <td><code>next_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3) — "Next chapter" control</td>
+            </tr>
+            <tr>
+              <td><code>search_placeholder</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — placeholder in the book/verse search box</td>
+            </tr>
+            <tr>
+              <td><code>old_testament</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — Old Testament tab label</td>
+            </tr>
+            <tr>
+              <td><code>new_testament</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — New Testament tab label</td>
+            </tr>
+            <tr>
+              <td><code>bible</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — label used in the reader header</td>
+            </tr>
+            <tr>
+              <td><code>chapter</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — "Chapter" label</td>
+            </tr>
+            <tr>
+              <td><code>copy</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — copy-verse action label</td>
+            </tr>
+            <tr>
+              <td><code>share</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — share-verse action label</td>
+            </tr>
+            <tr>
+              <td><code>play_audio</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — audio playback action label</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ <b>Don't look here for missing verses or wrong chapter text —
+          that's not a CMS problem.</b> Book/chapter/verse content comes from
+          <code>jc-core-backend</code>'s Digital Bible Platform proxy, not
+          from this block. If translated UI labels are missing for a locale,
+          that's this block; if scripture text itself is wrong or missing,
+          escalate to the Bible module in <code>jc-core-backend</code>
+          instead.
+        </div>
+
+        <!-- Bible Page quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p45">
+          <h3>Quick How-To Recap — Bible Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Change the Bible page title/SEO</td>
+                <td>Bible → pageTitle / slug / seo</td>
+                <td>
+                  No <code>sectionOrder</code> here — order is controlled
+                  purely by the position of blocks inside
+                  <code>sections[]</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Reorder or remove a section</td>
+                <td>Bible → sections[]</td>
+                <td>
+                  Drag entries in the dynamic zone directly — there's no
+                  separate order/enabled toggle like the other pages
+                </td>
+              </tr>
+              <tr>
+                <td>Update the hero banner image/copy</td>
+                <td>Bible → sections[] → Bible Banner block</td>
+                <td>
+                  Set <code>mobile_image</code>/<code>tab_image</code> too,
+                  or those breakpoints fall back to a default
+                </td>
+              </tr>
+              <tr>
+                <td>Translate the reader's buttons/labels</td>
+                <td>Bible → sections[] → Bible Content block</td>
+                <td>
+                  This only changes UI labels — never the scripture text
+                  itself
+                </td>
+              </tr>
+              <tr>
+                <td>Cross-promote the magazine</td>
+                <td>Bible → sections[] → Magazine CTA Banner block</td>
+                <td>No fields are required — an empty block still publishes</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout" style="margin-top: 24px">
+            <b>Troubleshooting — Bible Page</b><br /><br />
+            <b>Page returns 403 / frontend can't load it at all?</b> Check
+            Settings → Users &amp; Permissions → Public role —
+            <code>api::bible.bible</code> is currently missing from the
+            public-read allowlist (see the Overview callout above); this is a
+            known, unresolved gap as of this manual's last update.<br />
+            <b>Verses/chapters missing or wrong?</b> Not a CMS issue — that
+            content is served by <code>jc-core-backend</code>'s Bible module,
+            not this content type.<br />
+            <b>A block added to <code>sections[]</code> isn't
+            rendering?</b> Confirm the entry itself is Published — dynamic
+            zone blocks inherit the parent Bible entry's publish state, they
+            have no publish flag of their own.
+          </div>
+        </div>
+      </section>
     </div>
 
     <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top"
@@ -5878,6 +7919,26 @@
         universitySubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // Donate Page submenu toggle
+      const donatePageToggle = document.getElementById("donatePageToggle");
+      const donatePageSubmenu = document.getElementById("donatePageSubmenu");
+      donatePageToggle.addEventListener("click", () => {
+        const expanded =
+          donatePageToggle.getAttribute("aria-expanded") === "true";
+        donatePageToggle.setAttribute("aria-expanded", String(!expanded));
+        donatePageSubmenu.classList.toggle("collapsed", expanded);
+      });
+
+      // Bible Page submenu toggle
+      const biblePageToggle = document.getElementById("biblePageToggle");
+      const biblePageSubmenu = document.getElementById("biblePageSubmenu");
+      biblePageToggle.addEventListener("click", () => {
+        const expanded =
+          biblePageToggle.getAttribute("aria-expanded") === "true";
+        biblePageToggle.setAttribute("aria-expanded", String(!expanded));
+        biblePageSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -5919,6 +7980,20 @@
                 universitySubmenu.classList.remove("collapsed");
               } else {
                 universityToggle.classList.remove("active");
+              }
+              if (donatePageSubmenu.contains(link)) {
+                donatePageToggle.classList.add("active");
+                donatePageToggle.setAttribute("aria-expanded", "true");
+                donatePageSubmenu.classList.remove("collapsed");
+              } else {
+                donatePageToggle.classList.remove("active");
+              }
+              if (biblePageSubmenu.contains(link)) {
+                biblePageToggle.classList.add("active");
+                biblePageToggle.setAttribute("aria-expanded", "true");
+                biblePageSubmenu.classList.remove("collapsed");
+              } else {
+                biblePageToggle.classList.remove("active");
               }
             }
           });
