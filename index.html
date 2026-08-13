@@ -1821,6 +1821,179 @@
             </tbody>
           </table>
         </div>
+
+        <div class="sub" id="p1-15">
+          <h3>1.15 Responsive Images — upload sizes by breakpoint</h3>
+          <p class="note">
+            The frontend renders three widths: <b>Desktop</b> (≥1024px),
+            <b>Tablet</b> (768–1023px) and <b>Mobile</b> (&lt;768px). Not
+            every section gives you a separate upload slot for all three —
+            check the field list for the section you're editing before you
+            assume tablet/mobile get their own image. Where a breakpoint has
+            no dedicated field, that viewport reuses the desktop image
+            (scaled down by the browser), so pick a crop that still reads
+            well small.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Breakpoint</th>
+                <th>Recommended upload width</th>
+                <th>Aspect ratio</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Desktop</td>
+                <td>1600–1920px wide</td>
+                <td>21/9 or 16/9 for hero banners; 4/3 or 1/1 for content
+                  photos</td>
+                <td>Export @2x for retina screens; keep under ~500KB
+                  (compress/WebP) so hero sections stay fast</td>
+              </tr>
+              <tr>
+                <td>Tablet</td>
+                <td>1024–1200px wide</td>
+                <td>Same ratio as desktop unless the design crops tighter</td>
+                <td>Re-crop rather than just shrinking the desktop image if
+                  faces/text sit near the edges</td>
+              </tr>
+              <tr>
+                <td>Mobile</td>
+                <td>750–900px wide</td>
+                <td>4/5 or 1/1 — portrait crops read better on phones than
+                  wide 21/9 hero images</td>
+                <td>This is the field most often left empty by mistake —
+                  always preview on an actual phone width before publishing</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="note" style="margin-top: 16px">
+            Field-name patterns you'll see across the CMS — Strapi doesn't
+            enforce one convention, so check which pattern the section you're
+            in actually uses:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Pattern</th>
+                <th>Breakpoints covered</th>
+                <th>Where it's used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>bgImage</code> / <code>tab_bgImage</code> /
+                  <code>mobile_bgImage</code></td>
+                <td>Desktop, Tablet, Mobile (full 3-tier)</td>
+                <td>Home Hero Banner slides (Part 4)</td>
+              </tr>
+              <tr>
+                <td><code>desktop_image</code> / <code>tab_image</code> /
+                  <code>mobile_image</code></td>
+                <td>Desktop, Tablet, Mobile (full 3-tier)</td>
+                <td>University Banner (Part 5)</td>
+              </tr>
+              <tr>
+                <td><code>background</code> / <code>tab_image</code> /
+                  <code>mobile_image</code></td>
+                <td>Desktop, Tablet, Mobile (full 3-tier)</td>
+                <td>Bible Banner (Part 4, Bible page)</td>
+              </tr>
+              <tr>
+                <td><code>image</code> / <code>mobileImage</code></td>
+                <td>Desktop only, plus one Mobile override — <b>no tablet
+                  slot</b></td>
+                <td>Humanitarian Banner Section (Part 3, Humanitarian page).
+                  Tablet viewports fall back to <code>image</code></td>
+              </tr>
+              <tr>
+                <td><code>media</code> / plain <code>image</code></td>
+                <td>Single image, reused at every breakpoint — no responsive
+                  override at all</td>
+                <td>Donate "Project of the Month" slides, University
+                  Institution/Story cards, Humanitarian Programs &amp;
+                  Services and Stories of Transformation cards</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Uploading a set of device images?</b> Go to
+            <b>Media Library → Upload</b>, add the Desktop/Tablet/Mobile
+            files as separate assets first (name them so you can tell them
+            apart, e.g. <code>humanitarian-hero-desktop.jpg</code>,
+            <code>…-tablet.jpg</code>, <code>…-mobile.jpg</code>), then open
+            the content entry and assign each file to its matching field.
+            Sections with only a single image field (last row above) don't
+            need this — one upload covers every device, so choose a crop
+            that still works cropped tighter on a phone.
+          </div>
+        </div>
+
+        <div class="sub" id="p1-16">
+          <h3>1.16 Language-specific font sizes</h3>
+          <p class="note">
+            Text, Description, Tagline and Button components (1.1, 1.2, 1.13,
+            1.3) all carry three size fields —
+            <code>desktopFontSize</code>, <code>tabFontSize</code> and
+            <code>mobileFontSize</code> — set in pixels. These aren't
+            language-aware by themselves; they become language-specific
+            because the pages using them are localized
+            (<code>pluginOptions.i18n.localized: true</code>). Every locale
+            (English, Tamil, Hindi, Malayalam, Telugu) is a fully separate
+            content entry, so each locale's copy of a Text/Description
+            component keeps its own <code>desktopFontSize</code> /
+            <code>tabFontSize</code> / <code>mobileFontSize</code>
+            independent of the others.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>What to do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  Open the entry (e.g. Home Page → Hero Banner) and use the
+                  <b>locale selector</b> in the top-right of the content
+                  editor to switch to the language you want to adjust
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  Expand the Text/Description field and set
+                  <code>desktopFontSize</code> / <code>tabFontSize</code> /
+                  <code>mobileFontSize</code> for that locale only — this
+                  does not change any other language's entry
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  Repeat per locale. Scripts that run visually larger at the
+                  same pixel size (e.g. Tamil, Malayalam) typically read
+                  correctly a couple of sizes down from the English value
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Example.</b> English title set to <code>desktopFontSize: 14</code>
+            reads comfortably. Switch the locale selector to Tamil and set
+            the same field to <code>desktopFontSize: 12</code> — English
+            keeps 14 on desktop, Tamil renders at 12 on desktop, and each
+            language still has its own independent tablet/mobile sizes on
+            top of that. If a locale is left blank, the component's schema
+            default applies (e.g. Text/Description/Tagline default
+            <code>mobileFontSize</code> to <code>12</code>).
+          </div>
+        </div>
       </section>
 
       <!-- ============ PART 2 ============ -->
@@ -2348,7 +2521,22 @@
                 <td><code>bgImage</code></td>
                 <td><span class="req-yes">Yes</span></td>
                 <td>—</td>
-                <td>Media (1.4). Recommended ≥1440px wide, 21/9, cover</td>
+                <td>Media (1.4) — Desktop image. Recommended ≥1600px wide,
+                  21/9, cover (see 1.15)</td>
+              </tr>
+              <tr>
+                <td><code>tab_bgImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Media (1.4) — Tablet override. Falls back to
+                  <code>bgImage</code> if empty (see 1.15)</td>
+              </tr>
+              <tr>
+                <td><code>mobile_bgImage</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Media (1.4) — Mobile override. Falls back to
+                  <code>bgImage</code> if empty (see 1.15)</td>
               </tr>
               <tr>
                 <td><code>title</code></td>
@@ -4326,7 +4514,9 @@
               <td><span class="req-yes">Yes</span></td>
               <td>—</td>
               <td>Media (1.4)</td>
-              <td>Desktop hero image — recommend ≥1440 px wide, 21/9 ratio</td>
+              <td>Desktop hero image — recommend ≥1600 px wide, 21/9 ratio
+                (see 1.15). Also used on tablet — this section has no
+                tablet-specific field</td>
             </tr>
             <tr>
               <td><code>mobileImage</code></td>
@@ -4389,6 +4579,16 @@
             </tr>
           </tbody>
         </table>
+        <div class="callout">
+          <b>No tablet-specific image here.</b> Unlike University Banner and
+          Bible Banner (which have a dedicated <code>tab_image</code>/
+          <code>tab_bgImage</code> field), this section only has
+          <code>image</code> (desktop) and <code>mobileImage</code>. Tablet
+          viewports render the desktop <code>image</code> — crop it so it
+          still reads well at ~1024px wide, or ask engineering to add a
+          <code>tabImage</code> field if the desktop crop doesn't hold up.
+          See 1.15 for the full breakpoint reference.
+        </div>
       </section>
 
       <!-- ============ PART 13 — BUILDING HOPE SECTION ============ -->
@@ -5384,12 +5584,6 @@
             </thead>
             <tbody>
               <tr>
-                <td><code>image</code></td>
-                <td><span class="req-no">No</span></td>
-                <td>—</td>
-                <td>Media upload — the banner photo</td>
-              </tr>
-              <tr>
                 <td><code>tagline</code></td>
                 <td><span class="req-no">No</span></td>
                 <td>—</td>
@@ -5421,7 +5615,17 @@
                 <td><span class="req-no">No</span></td>
                 <td>—</td>
                 <td>
-                  Background Type (1.12) — background shown on desktop viewports
+                  Background Type (1.12) — background shown on desktop
+                  viewports (see 1.15)
+                </td>
+              </tr>
+              <tr>
+                <td><code>tab_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Background Type (1.12) — background shown on tablet
+                  viewports (see 1.15)
                 </td>
               </tr>
               <tr>
@@ -5429,11 +5633,19 @@
                 <td><span class="req-no">No</span></td>
                 <td>—</td>
                 <td>
-                  Background Type (1.12) — background shown on mobile viewports
+                  Background Type (1.12) — background shown on mobile
+                  viewports (see 1.15)
                 </td>
               </tr>
             </tbody>
           </table>
+          <div class="callout">
+            <b>Set all three.</b> <code>desktop_image</code>,
+            <code>tab_image</code> and <code>mobile_image</code> are
+            independent fields under Background Type (1.12) — each one needs
+            its own <code>background_type = image</code> selected and its
+            own upload, or that breakpoint won't show the picture.
+          </div>
         </div>
       </section>
 
@@ -6440,6 +6652,12 @@
           <p class="note">
             One slide in the "Project of the Month" carousel, repeatable.
           </p>
+          <div class="callout">
+            <b>Single image, all breakpoints.</b> <code>media</code> has no
+            tablet/mobile override — the same upload is used at every
+            screen size, so choose a crop that still works cropped tighter
+            on a phone (see 1.15's single-image row).
+          </div>
           <table>
             <thead>
               <tr>
