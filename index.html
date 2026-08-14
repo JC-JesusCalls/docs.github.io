@@ -684,6 +684,98 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="merchandiseToggle"
+            aria-expanded="false"
+            aria-controls="merchandiseSubmenu"
+          >
+            Merchandise Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="merchandiseSubmenu">
+            <a href="#p46"
+              ><span class="num">1</span> Merchandise Page — Overview</a
+            >
+            <a href="#p47"><span class="num">2</span> Merchandise</a>
+            <a href="#p48"><span class="num">3</span> Hero Banner</a>
+            <a href="#p49"><span class="num">4</span> Sacred Collection</a>
+            <a href="#p50"><span class="num">5</span> Store Visit</a>
+            <a href="#p51"
+              ><span class="num">6</span> Authentic Hand Paint</a
+            >
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="matrimonyToggle"
+            aria-expanded="false"
+            aria-controls="matrimonySubmenu"
+          >
+            Matrimony Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="matrimonySubmenu">
+            <a href="#p53"
+              ><span class="num">1</span> Matrimony Page — Overview</a
+            >
+            <a href="#p54"><span class="num">2</span> Matrimony</a>
+            <a href="#p55"><span class="num">3</span> Hero Section</a>
+            <a href="#p56"><span class="num">4</span> Membership Section</a>
+            <a href="#p57"
+              ><span class="num">5</span> Featured Video Section</a
+            >
+            <a href="#p58"><span class="num">6</span> Services</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="magazineToggle"
+            aria-expanded="false"
+            aria-controls="magazineSubmenu"
+          >
+            Magazine Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="magazineSubmenu">
+            <a href="#p60"
+              ><span class="num">1</span> Magazine Page — Overview</a
+            >
+            <a href="#p61"><span class="num">2</span> Magazine</a>
+            <a href="#p62"><span class="num">3</span> Magazine Hero Banner</a>
+            <a href="#p63"><span class="num">4</span> Magazine Section</a>
+            <a href="#p64"
+              ><span class="num">5</span> Latest / Past Issue Blocks</a
+            >
+            <a href="#p66"><span class="num">6</span> Magazine Issue</a>
+            <a href="#p67"
+              ><span class="num">7</span> Magazine Subscription Section</a
+            >
+            <a href="#p68"
+              ><span class="num">8</span> Magazine Subscription Request</a
+            >
+            <a href="#p69"><span class="num">9</span> Printed Magazine</a>
+            <a href="#p70"
+              ><span class="num">10</span> Printed Magazine Intro Section</a
+            >
+            <a href="#p71"
+              ><span class="num">11</span> Printed Magazine Member</a
+            >
+            <a href="#p72"
+              ><span class="num">12</span> Testimonials Section &amp;
+              Testimonial</a
+            >
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -700,6 +792,15 @@
         <a href="#p45"
           ><span class="num">5</span> Quick How-To Recap - Bible Page</a
         >
+        <a href="#p52"
+          ><span class="num">6</span> Quick How-To Recap - Merchandise Page</a
+        >
+        <a href="#p59"
+          ><span class="num">7</span> Quick How-To Recap - Matrimony Page</a
+        >
+        <a href="#p73"
+          ><span class="num">8</span> Quick How-To Recap - Magazine Page</a
+        >
       </div>
     </nav>
 
@@ -710,11 +811,13 @@
         <h1>Jesus Calls Website<br />CMS User Manual</h1>
         <p>
           Every content type and field used by the <strong>Homepage</strong>,
-          <strong>Humanitarian Page</strong> and
-          <strong>University Page</strong> — whether it's required, its default
-          value, allowed values, and what it changes on the live site. Required
-          / Default values are taken directly from the Strapi schema files, so
-          they're exact, not approximations.
+          <strong>Humanitarian Page</strong>, <strong>University Page</strong>,
+          <strong>Donate Page</strong>, <strong>Bible Page</strong>,
+          <strong>Merchandise Page</strong>, <strong>Matrimony Page</strong>
+          and <strong>Magazine Page</strong> — whether it's required, its
+          default value, allowed values, and what it changes on the live site.
+          Required / Default values are taken directly from the Strapi schema
+          files, so they're exact, not approximations.
         </p>
         <div class="hero-note">
           ⚠️
@@ -8087,6 +8190,2167 @@
           </div>
         </div>
       </section>
+
+      <!-- ============ MERCHANDISE PAGE — OVERVIEW ============ -->
+      <section
+        class="part"
+        id="p46"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Merchandise Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Merchandise page is a single <code>merchandise</code> page shell
+          whose <code>section</code> dynamic zone holds every block below,
+          plus one supporting collection type for individual products. All
+          types use Draft &amp; Publish and are localized (en / ta / hi / ml /
+          te).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Merchandise</td>
+              <td>Single</td>
+              <td><code>/merchandise</code></td>
+              <td>Page shell + slug + SEO + section dynamic zone</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Hero Banner <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>Tagline + title + description + CTA over a background</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Sacred Collection <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>Intro copy + linked Product Collection entries</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Merchandise Product Collection</td>
+              <td>Collection</td>
+              <td>—</td>
+              <td>Individual product/collection cards</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Store Visit <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>"Visit the store" CTA panel</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                University Statistics Section
+                <span class="field-tag">block, reused</span>
+              </td>
+              <td>—</td>
+              <td>—</td>
+              <td>
+                Same stat-counter block as the University page — see
+                <a href="#p29">Part 7 — Statistics Block</a>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                Authentic Hand Paint <span class="field-tag">block</span>
+              </td>
+              <td>—</td>
+              <td>—</td>
+              <td>Image + title + description + CTA panel</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 1 — MERCHANDISE ============ -->
+      <section class="part" id="p47">
+        <div class="part-kicker">Part 1</div>
+        <h2>Merchandise</h2>
+        <span class="endpoint">/merchandise</span>
+        <p class="lede">
+          Single type. Page shell for the Merchandise store landing page.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageTitle</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+              <td>Browser/page title for the Merchandise page</td>
+            </tr>
+            <tr>
+              <td><code>slug</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+              <td>Page identifier used by the frontend</td>
+            </tr>
+            <tr>
+              <td><code>seo</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>SEO (1.11)</td>
+              <td>If added, <code>metaTitle</code>/<code>metaDescription</code> are required</td>
+            </tr>
+            <tr>
+              <td><code>section[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Dynamic zone</td>
+              <td>
+                Mix of Hero Banner, Sacred Collection, Store Visit, Statistics
+                and Authentic Hand Paint blocks, in any order
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          Unlike Home Page / Humanitarian Page / University Page, Merchandise
+          has <b>no <code>pageBase</code></b> component — <code>pageTitle</code>,
+          <code>slug</code> and <code>seo</code> sit directly on the content
+          type, and there is no <code>sectionOrder</code>/<code>isPublished</code>
+          flag. Section order is simply the order blocks are arranged inside
+          <code>section[]</code> in the Content Manager.
+        </div>
+      </section>
+
+      <!-- ============ PART 2 — HERO BANNER ============ -->
+      <section class="part" id="p48">
+        <div class="part-kicker">Part 2</div>
+        <h2>
+          Hero Banner <span class="field-tag">blocks.merchandise-hero-banner</span>
+        </h2>
+        <p class="lede">
+          Top-of-page banner — tagline, title, description and a CTA button
+          over a configurable background.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>cta_button</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 3 — SACRED COLLECTION ============ -->
+      <section class="part" id="p49">
+        <div class="part-kicker">Part 3</div>
+        <h2>
+          Sacred Collection
+          <span class="field-tag">blocks.merchandise-sacred-collection</span>
+        </h2>
+        <p class="lede">
+          Intro copy for the featured product grid; the actual products live
+          in the <b>Merchandise Product Collection</b> collection below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>merchandise_product_collections</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Relation → collection (one-to-many). Pick which products
+                appear in this grid</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            Merchandise Product Collection
+            <span class="field-tag">collection type</span>
+          </h3>
+          <p class="note">
+            One entry per featured product/collection card. Create in Content
+            Manager → Merchandise Product Collection.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — product/collection name</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>cta_btn</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3)</td>
+              </tr>
+              <tr>
+                <td><code>background_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Media upload, <b>images only</b></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Add a product card:</b> Content Manager → Merchandise Product
+            Collection → Create new → fill title + upload
+            <code>background_image</code> → Save → Publish → go to Sacred
+            Collection block → attach it under
+            <code>merchandise_product_collections</code> → Publish the
+            Merchandise page.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 4 — STORE VISIT ============ -->
+      <section class="part" id="p50">
+        <div class="part-kicker">Part 4</div>
+        <h2>
+          Store Visit <span class="field-tag">blocks.merchandise-store-visit</span>
+        </h2>
+        <p class="lede">
+          "Visit our store" CTA panel — tagline, title, description and a
+          button over a configurable background.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>cta_button</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 5 — AUTHENTIC HAND PAINT ============ -->
+      <section class="part" id="p51">
+        <div class="part-kicker">Part 5</div>
+        <h2>
+          Authentic Hand Paint
+          <span class="field-tag">blocks.merchandise-authentic-hand-paint</span>
+        </h2>
+        <p class="lede">
+          Panel highlighting hand-painted products — an image alongside title,
+          description and a CTA button over a configurable background.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>cta_button</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+            <tr>
+              <td><code>image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Media upload — images, files, videos or audios</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          This block used to have a <code>tagline</code> field; it was
+          replaced with the <code>image</code> field above. If older content
+          still expects a tagline here, re-check the block in Content Manager.
+        </div>
+
+        <!-- Merchandise quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p52">
+          <h3>Quick How-To Recap — Merchandise Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reorder or hide a section on the page</td>
+                <td>Merchandise → section[]</td>
+                <td>
+                  There's no <code>sectionOrder</code> component — drag blocks
+                  into the order you want directly inside
+                  <code>section[]</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Change the hero background</td>
+                <td>Hero Banner block → background_type</td>
+                <td>
+                  Pick the type first — only the matching field
+                  (image/color/gradient) shows
+                </td>
+              </tr>
+              <tr>
+                <td>Add a featured product</td>
+                <td>
+                  Merchandise Product Collection → Create new → attach under
+                  Sacred Collection block
+                </td>
+                <td>Must be Published to appear on the live page</td>
+              </tr>
+              <tr>
+                <td>Add a stat counter to the page</td>
+                <td>Statistics block (reused) → statistics[] → add entry</td>
+                <td>
+                  Same shared.statistics fields as the
+                  <a href="#p18">Humanitarian Statistics Section</a> /
+                  <a href="#p29">University Statistics Block</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Swap the Hand Paint panel's photo</td>
+                <td>Authentic Hand Paint block → image</td>
+                <td>
+                  Accepts images, files, videos or audios — for a product
+                  photo, upload an image
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout" style="margin-top: 24px">
+            <b>Troubleshooting — Merchandise Page</b><br /><br />
+            <b>A section isn't appearing?</b> Confirm its block is actually
+            added inside <code>section[]</code> and the Merchandise entry is
+            Published.<br />
+            <b>Products missing from Sacred Collection?</b> Each product must
+            be Published <i>and</i> attached under
+            <code>merchandise_product_collections</code> on the block.<br />
+            <b>Background not changing?</b> Check
+            <code>background_type</code> matches the field you filled in
+            (image / color / gradient).
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MATRIMONY PAGE — OVERVIEW ============ -->
+      <section
+        class="part"
+        id="p53"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Matrimony Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Matrimony page is a single <code>matrimony</code> page shell
+          whose <code>sections</code> dynamic zone holds every block below.
+          All types use Draft &amp; Publish and are localized (en / ta / hi /
+          ml / te).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Matrimony</td>
+              <td>Single</td>
+              <td><code>/matrimony</code></td>
+              <td>Page shell + slug + SEO + sections dynamic zone</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Hero Section <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>Banner + lead-capture form</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Membership Section <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>Repeatable membership plan cards</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                Featured Video Section <span class="field-tag">block</span>
+              </td>
+              <td>—</td>
+              <td>—</td>
+              <td>Testimonial/feature video panel</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Services <span class="field-tag">block</span></td>
+              <td>—</td>
+              <td>—</td>
+              <td>Repeatable service/feature list</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 1 — MATRIMONY ============ -->
+      <section class="part" id="p54">
+        <div class="part-kicker">Part 1</div>
+        <h2>Matrimony</h2>
+        <span class="endpoint">/matrimony</span>
+        <p class="lede">
+          Single type. Page shell for the Matrimony service page.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Type</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageTitle</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+              <td>Browser/page title for the Matrimony page</td>
+            </tr>
+            <tr>
+              <td><code>slug</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+              <td>Page identifier used by the frontend</td>
+            </tr>
+            <tr>
+              <td><code>seo</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>SEO (1.11)</td>
+              <td>If added, <code>metaTitle</code>/<code>metaDescription</code> are required</td>
+            </tr>
+            <tr>
+              <td><code>sections[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Dynamic zone</td>
+              <td>
+                Mix of Membership Section, Hero Section, Featured Video
+                Section and Services blocks, in any order
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          Same shape as Merchandise: no <code>pageBase</code>,
+          <code>sectionOrder</code> or <code>isPublished</code> flag —
+          <code>pageTitle</code>/<code>slug</code>/<code>seo</code> sit
+          directly on the content type, and section order is just the order
+          blocks are arranged inside <code>sections[]</code>.
+        </div>
+      </section>
+
+      <!-- ============ PART 2 — HERO SECTION ============ -->
+      <section class="part" id="p55">
+        <div class="part-kicker">Part 2</div>
+        <h2>
+          Hero Section <span class="field-tag">blocks.matrimony-hero-section</span>
+        </h2>
+        <p class="lede">
+          Top-of-page banner with a lead-capture form. Has separate
+          backgrounds for desktop, tablet and mobile.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>matrimonyHeroSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>form</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Matrimony Form component — detailed below</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — desktop</td>
+            </tr>
+            <tr>
+              <td><code>tab_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — tablet</td>
+            </tr>
+            <tr>
+              <td><code>mobile_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — mobile</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>form</code> <span class="field-tag">blocks.matrimony-form</span>
+          </h3>
+          <p class="note">
+            The registration/lead form shown inside the hero.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>background_color</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color (color-picker customField)</td>
+              </tr>
+              <tr>
+                <td><code>name</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Input Field — label/icon/placeholder/layout/required</td>
+              </tr>
+              <tr>
+                <td><code>looking_for</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Dropdown Field — same shape as Input Field plus a
+                  <code>dataSource</code> (country / state / static)</td>
+              </tr>
+              <tr>
+                <td><code>religion</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Dropdown Field</td>
+              </tr>
+              <tr>
+                <td><code>form_button</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — submit button</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Static dropdown options:</b> only shown when
+            <code>dataSource = static</code> on that dropdown — add entries
+            under its <code>options[]</code>. For <code>country</code>/
+            <code>state</code>, the list is populated automatically and
+            <code>options[]</code> is hidden.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 3 — MEMBERSHIP SECTION ============ -->
+      <section class="part" id="p56">
+        <div class="part-kicker">Part 3</div>
+        <h2>
+          Membership Section
+          <span class="field-tag">blocks.matrimony-membership-section</span>
+        </h2>
+        <p class="lede">
+          Repeatable list of membership/plan cards over a configurable
+          background.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>matrimonyMembershipSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>membership[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Repeatable Matrimony Membership component — see below</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>membership[]</code>
+            <span class="field-tag">blocks.matrimony-membership</span>
+          </h3>
+          <p class="note">
+            One entry per plan card (e.g. Basic, Premium). This same
+            component is reused by the Printed Magazine's
+            <a href="#p71">Member block</a>.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — plan name</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2) — plan details/price copy</td>
+              </tr>
+              <tr>
+                <td><code>button</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — e.g. "Choose Plan"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 4 — FEATURED VIDEO SECTION ============ -->
+      <section class="part" id="p57">
+        <div class="part-kicker">Part 4</div>
+        <h2>
+          Featured Video Section
+          <span class="field-tag">blocks.matrimony-featured-video-section</span>
+        </h2>
+        <p class="lede">
+          A single feature/testimonial video with a tagline, heading and
+          description over a thumbnail.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>matrimonyFeaturedVideoSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>text</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — note the field is named <code>text</code>,
+                not <code>title</code></td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>thumbnail</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Media upload, <b>images only</b></td>
+            </tr>
+            <tr>
+              <td><code>video_url</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Plain string — paste the full video URL</td>
+            </tr>
+            <tr>
+              <td><code>background_gradient</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Plain string — CSS gradient value</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <code>video_url</code> is a plain string, not an oEmbed field —
+          paste the direct video URL and the frontend handles playback.
+        </div>
+      </section>
+
+      <!-- ============ PART 5 — SERVICES ============ -->
+      <section class="part" id="p58">
+        <div class="part-kicker">Part 5</div>
+        <h2>
+          Services <span class="field-tag">blocks.matrimony-services</span>
+        </h2>
+        <p class="lede">
+          Repeatable list of service/feature callouts (icon + text +
+          description) over a configurable background.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>matrimonyServicesSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>services_section[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Repeatable Matrimony Services Section component — see
+                below</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>services_section[]</code>
+            <span class="field-tag">blocks.matrimony-services-section</span>
+          </h3>
+          <p class="note">One entry per service/feature callout.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>IconHub picker</td>
+              </tr>
+              <tr>
+                <td><code>txt</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — note the field is named <code>txt</code></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Matrimony quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p59">
+          <h3>Quick How-To Recap — Matrimony Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reorder or hide a section</td>
+                <td>Matrimony → sections[]</td>
+                <td>
+                  No <code>sectionOrder</code> component — arrange blocks
+                  directly inside <code>sections[]</code>
+                </td>
+              </tr>
+              <tr>
+                <td>Change the hero background per device</td>
+                <td>
+                  Hero Section → background_type / tab_type / mobile_type
+                </td>
+                <td>Each of the three is independent — set all three</td>
+              </tr>
+              <tr>
+                <td>Edit the lead-capture form fields</td>
+                <td>Hero Section → form → name / looking_for / religion</td>
+                <td>
+                  Dropdown fields need <code>dataSource</code> set — use
+                  <code>static</code> plus <code>options[]</code> for custom
+                  lists
+                </td>
+              </tr>
+              <tr>
+                <td>Add or reorder a membership plan</td>
+                <td>Membership Section → membership[] → add entry</td>
+                <td>
+                  Same component is reused by Printed Magazine's Member block
+                  — changes here don't affect that page
+                </td>
+              </tr>
+              <tr>
+                <td>Change the featured video</td>
+                <td>Featured Video Section → video_url + thumbnail</td>
+                <td>
+                  <code>video_url</code> is a plain string here, not an
+                  oEmbed field
+                </td>
+              </tr>
+              <tr>
+                <td>Add a service/feature callout</td>
+                <td>Services → services_section[] → add entry</td>
+                <td>Field is <code>txt</code>, not <code>title</code></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout" style="margin-top: 24px">
+            <b>Troubleshooting — Matrimony Page</b><br /><br />
+            <b>Form dropdown showing nothing?</b> Check
+            <code>dataSource</code> — <code>static</code> requires manually
+            added <code>options[]</code>; <code>country</code>/<code>state</code>
+            populate automatically.<br />
+            <b>Video not playing?</b> Confirm <code>video_url</code> is a full,
+            direct video URL.<br />
+            <b>A section is missing?</b> Confirm its block is added inside
+            <code>sections[]</code> and the Matrimony entry is Published.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MAGAZINE PAGE — OVERVIEW ============ -->
+      <section
+        class="part"
+        id="p60"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Magazine Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Magazine area covers both the digital <b>e-Magazine</b>
+          (<code>magazine</code> + its own section single-types) and the
+          <b>Printed Magazine</b> (a single dynamic-zone page). All types use
+          Draft &amp; Publish and are localized (en / ta / hi / ml / te),
+          except <code>magazine-subscription-request</code> which is a plain
+          write-only lead form.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Magazine</td>
+              <td>Single</td>
+              <td><code>/magazine</code></td>
+              <td>Page shell (pageBase + slugName)</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Magazine Hero Banner</td>
+              <td>Single</td>
+              <td><code>/magazine-hero-banner</code></td>
+              <td>Top-of-page banner</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Magazine Section</td>
+              <td>Single</td>
+              <td><code>/magazine-section</code></td>
+              <td>Language picker + latest/past issue dynamic zone</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Magazine Issue</td>
+              <td>Collection</td>
+              <td><code>/magazine-issues</code></td>
+              <td>Individual issue cards (date, language, image, CTA)</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Magazine Subscription Section</td>
+              <td>Single</td>
+              <td><code>/magazine-subscription-section</code></td>
+              <td>Pricing/CTA content for the subscription form</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Magazine Subscription Request</td>
+              <td>Collection</td>
+              <td><code>/magazine-subscription-requests</code></td>
+              <td>Subscriber submissions (create-only, no i18n)</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Printed Magazine</td>
+              <td>Single</td>
+              <td><code>/printed-magazine</code></td>
+              <td>Page shell + section dynamic zone (intro / member /
+                testimonials)</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Testimonial</td>
+              <td>Collection</td>
+              <td><code>/testimonials</code></td>
+              <td>Printed-magazine testimonial entries</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 1 — MAGAZINE ============ -->
+      <section class="part" id="p61">
+        <div class="part-kicker">Part 1</div>
+        <h2>Magazine</h2>
+        <span class="endpoint">/magazine</span>
+        <p class="lede">
+          Single type. Page shell for the digital e-Magazine landing page.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>magazine</code></td>
+              <td>UID — auto-generated URL segment</td>
+            </tr>
+            <tr>
+              <td><code>pageBase</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Page Base component — same shape as
+                <a href="#p15">Humanitarian Page's <code>pageBase</code></a>
+                (pageTitle, slug, colors, seo, isPublished,
+                sectionOrder[])</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ Same as Humanitarian/University:
+          <b>set <code>pageBase.isPublished = true</code></b> or the frontend
+          treats the page as unpublished.
+        </div>
+      </section>
+
+      <!-- ============ PART 2 — MAGAZINE HERO BANNER ============ -->
+      <section class="part" id="p62">
+        <div class="part-kicker">Part 2</div>
+        <h2>Magazine Hero Banner</h2>
+        <span class="endpoint">/magazine-hero-banner</span>
+        <p class="lede">
+          Top-of-page banner with separate desktop and mobile backgrounds.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>magazineHeroBanner</code></td>
+              <td>UID — auto-generated</td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — desktop</td>
+            </tr>
+            <tr>
+              <td><code>mobile_background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — mobile</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Media upload, <b>images only</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 3 — MAGAZINE SECTION ============ -->
+      <section class="part" id="p63">
+        <div class="part-kicker">Part 3</div>
+        <h2>Magazine Section</h2>
+        <span class="endpoint">/magazine-section</span>
+        <p class="lede">
+          Language picker for the e-Magazine, plus a dynamic zone that holds
+          the Latest Issue and Past Issue blocks.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>magazineSection</code></td>
+              <td>UID — auto-generated</td>
+            </tr>
+            <tr>
+              <td><code>chooseLanguageTitle</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — heading above the language tabs</td>
+            </tr>
+            <tr>
+              <td><code>languages[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Language Tab (1.8), repeatable — one entry per selectable
+                language</td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+            <tr>
+              <td><code>section[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Dynamic zone — Latest Issue and/or Past Issue blocks, see
+                <a href="#p64">Part 4</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 4 — LATEST / PAST ISSUE BLOCKS ============ -->
+      <section class="part" id="p64">
+        <div class="part-kicker">Part 4</div>
+        <h2>
+          Magazine Latest Issue
+          <span class="field-tag">blocks.magazine-latest-issue</span>
+        </h2>
+        <p class="lede">
+          Highlights the current issue with a feature list and a CTA.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>magazineLatestIssue</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>cta_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>features[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>List Item (1.14), repeatable</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <b>Rich text</b> — unlike most description fields on this
+                page, this one is a plain rich-text editor, not the styled
+                Description (1.2) component
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub" id="p65">
+          <h3>
+            Magazine Past Issue
+            <span class="field-tag">blocks.magazine-past-issue</span>
+          </h3>
+          <p class="note">One card per previously published issue.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>magazinePastIssue</code></td>
+                <td>Internal identifier</td>
+              </tr>
+              <tr>
+                <td><code>tagline</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Tagline (1.13)</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2) — the styled component this time, not
+                  rich text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 5 — MAGAZINE ISSUE ============ -->
+      <section class="part" id="p66">
+        <div class="part-kicker">Part 5</div>
+        <h2>Magazine Issue</h2>
+        <span class="endpoint">/magazine-issues</span>
+        <p class="lede">
+          Collection type. One entry per issue — used to list every past
+          issue, not just the ones featured on the Magazine Section page.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>UID — no static default; auto-generated per entry to avoid
+                collisions</td>
+            </tr>
+            <tr>
+              <td><code>issueDate</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Date — used for sort order on the frontend</td>
+            </tr>
+            <tr>
+              <td><code>language</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>en</code></td>
+              <td>Enum: en / ta / hi / ml / te</td>
+            </tr>
+            <tr>
+              <td><code>cta_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Media upload — images, files, videos or audios</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <b>Add an issue:</b> Content Manager → Magazine Issue → Create new →
+          set <code>issueDate</code> and <code>language</code> → upload
+          <code>image</code> → Save → Publish.
+        </div>
+      </section>
+
+      <!-- ============ PART 6 — SUBSCRIPTION SECTION ============ -->
+      <section class="part" id="p67">
+        <div class="part-kicker">Part 6</div>
+        <h2>Magazine Subscription Section</h2>
+        <span class="endpoint">/magazine-subscription-section</span>
+        <p class="lede">
+          CMS-managed pricing, quote and CTA copy shown around the
+          subscription form.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>magazineSubscriptionSection</code></td>
+              <td>UID — auto-generated</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>quote</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Quote component — see below</td>
+            </tr>
+            <tr>
+              <td><code>annualPriceLabel</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>Annual Subscription</code></td>
+              <td>Plain string label above the price</td>
+            </tr>
+            <tr>
+              <td><code>priceDescription</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Plain string</td>
+            </tr>
+            <tr>
+              <td><code>price</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>500</code></td>
+              <td>Decimal</td>
+            </tr>
+            <tr>
+              <td><code>currency</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>INR</code></td>
+              <td>Plain string</td>
+            </tr>
+            <tr>
+              <td><code>subscribeButton</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>quote</code> <span class="field-tag">shared.quote</span>
+          </h3>
+          <p class="note">
+            A styled pull-quote — used here for a subscriber testimonial or
+            Bible verse.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string</td>
+              </tr>
+              <tr>
+                <td><code>titleColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>body</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain text — the quote itself</td>
+              </tr>
+              <tr>
+                <td><code>bodyColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5) — citation/reference text color</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Brand Color (1.5) — quote box background</td>
+              </tr>
+              <tr>
+                <td><code>decorIcon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>IconHub picker — optional decorative icon (e.g. a
+                  cross)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 7 — SUBSCRIPTION REQUEST ============ -->
+      <section class="part" id="p68">
+        <div class="part-kicker">Part 7</div>
+        <h2>Magazine Subscription Request</h2>
+        <span class="endpoint">/magazine-subscription-requests</span>
+        <p class="lede">
+          Collection type. One entry per subscriber submission from the
+          public subscription form.
+        </p>
+        <div class="callout">
+          Unlike every other content type on this page,
+          <code>magazine-subscription-request</code> has <b>Draft &amp;
+          Publish turned off</b> and is <b>not localized</b> — it's a plain
+          write-only lead form. The public API only allows
+          <code>create</code>, not <code>find</code>/<code>findOne</code> —
+          submissions can only be read from the Strapi admin Content
+          Manager, not fetched back by the frontend.
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>name</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>email</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Email — validated format</td>
+            </tr>
+            <tr>
+              <td><code>mobileNumber</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>deliveryAddress</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Text</td>
+            </tr>
+            <tr>
+              <td><code>pincode</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>townCity</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>state</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>country</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>amount</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>500</code></td>
+              <td>Decimal</td>
+            </tr>
+            <tr>
+              <td><code>currency</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>INR</code></td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td><code>paymentStatus</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>pending</code></td>
+              <td>Enum: pending / completed / failed</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 8 — PRINTED MAGAZINE ============ -->
+      <section class="part" id="p69">
+        <div class="part-kicker">Part 8</div>
+        <h2>Printed Magazine</h2>
+        <span class="endpoint">/printed-magazine</span>
+        <p class="lede">
+          Single type. Page shell for the Printed Magazine landing page —
+          consolidated into one dynamic zone rather than separate section
+          content types.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>printedMagazine</code></td>
+              <td>UID — auto-generated</td>
+            </tr>
+            <tr>
+              <td><code>section[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Dynamic zone — exactly three block types: Intro Section,
+                Member, Testimonials Section (in any order)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          The old standalone <code>printed-magazine-benefits-section</code>
+          and <code>printed-magazine-testimonials-section</code> APIs were
+          removed — everything now lives inside this one dynamic zone.
+        </div>
+      </section>
+
+      <!-- ============ PART 9 — INTRO SECTION ============ -->
+      <section class="part" id="p70">
+        <div class="part-kicker">Part 9</div>
+        <h2>
+          Printed Magazine Intro Section
+          <span class="field-tag">blocks.printed-magazine-intro-section</span>
+        </h2>
+        <p class="lede">
+          The largest block on this page — hero copy, a subscribe CTA, an
+          inline subscription price strip and an embedded contact form.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>printedMagazineIntroSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>subscribeButton</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Media upload, <b>images only</b></td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+            <tr>
+              <td><code>contact_form</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Relation → Contact Form (one-to-one)</td>
+            </tr>
+            <tr>
+              <td><code>contact_form_title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — heading above the embedded form</td>
+            </tr>
+            <tr>
+              <td><code>annual_subscription_text</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — e.g. "Annual Subscription"</td>
+            </tr>
+            <tr>
+              <td><code>subscription_number</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — the price figure</td>
+            </tr>
+            <tr>
+              <td><code>subscription_description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>subscription_background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Hex color (color-picker customField) — background of the
+                price strip</td>
+            </tr>
+            <tr>
+              <td><code>number</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Integer</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <b>Contact form:</b> pick an existing Contact Form entry under
+          <code>contact_form</code> — it isn't created here, only linked.
+        </div>
+      </section>
+
+      <!-- ============ PART 10 — MEMBER BLOCK ============ -->
+      <section class="part" id="p71">
+        <div class="part-kicker">Part 10</div>
+        <h2>
+          Printed Magazine Member
+          <span class="field-tag">blocks.printed-magazine-member</span>
+        </h2>
+        <p class="lede">
+          Repeatable membership plan cards over a configurable background —
+          reuses the exact same component as the
+          <a href="#p56">Matrimony Membership Section</a>.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>printedMagazineMember</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>membership[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable <a href="#p56">Matrimony Membership</a> component —
+                title / description / button
+              </td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 11 — TESTIMONIALS SECTION & TESTIMONIAL ============ -->
+      <section class="part" id="p72">
+        <div class="part-kicker">Part 11</div>
+        <h2>
+          Printed Magazine Testimonials Section
+          <span class="field-tag">blocks.printed-magazine-testimonials-section</span>
+        </h2>
+        <p class="lede">
+          Section chrome for a testimonial carousel; the individual
+          testimonials live in the <b>Testimonial</b> collection below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>printedMagazineTestimonialsSection</code></td>
+              <td>Internal identifier</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>testimonials</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Relation → Testimonial collection (one-to-many)</td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            Testimonial <span class="field-tag">collection type</span>
+          </h3>
+          <span class="endpoint">/testimonials</span>
+          <p class="note">
+            One entry per testimonial. Each testimonial is either a text
+            layout or an image layout — never both.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>UID — no static default; auto-generated per entry</td>
+              </tr>
+              <tr>
+                <td><code>layout</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>content</code></td>
+                <td>Enum: content / image</td>
+              </tr>
+              <tr>
+                <td><code>tagline</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Tagline (1.13)</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Media upload, <b>images only</b> — <b>only shown/used when
+                  <code>layout = image</code></b>
+                </td>
+              </tr>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12) — desktop</td>
+              </tr>
+              <tr>
+                <td><code>mobile_background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12) — mobile</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">
+            <b>Add a testimonial:</b> Content Manager → Testimonial → Create
+            new → set <code>layout</code> (upload <code>image</code> only if
+            <code>layout = image</code>) → Save → Publish → attach it under
+            Testimonials Section → <code>testimonials</code>.
+          </div>
+        </div>
+
+        <!-- Magazine quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p73">
+          <h3>Quick How-To Recap — Magazine Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Reorder or hide an e-Magazine section</td>
+                <td>Magazine → pageBase → sectionOrder → order / enabled</td>
+                <td>Same pattern as Homepage/Humanitarian — don't rename
+                  <code>sectionKey</code></td>
+              </tr>
+              <tr>
+                <td>Add a new digital issue</td>
+                <td>Magazine Issue → Create new</td>
+                <td><code>issueDate</code> and <code>language</code> both
+                  matter for sorting/filtering on the frontend</td>
+              </tr>
+              <tr>
+                <td>Feature the current issue on the page</td>
+                <td>
+                  Magazine Section → section[] → Magazine Latest Issue block
+                </td>
+                <td>
+                  <code>description</code> here is rich text, unlike almost
+                  every other description field on this page
+                </td>
+              </tr>
+              <tr>
+                <td>Change subscription price/currency</td>
+                <td>
+                  Magazine Subscription Section → price / currency /
+                  annualPriceLabel
+                </td>
+                <td>Update <code>magazine-subscription-request.amount</code>
+                  too if the checkout price changes — they aren't linked</td>
+              </tr>
+              <tr>
+                <td>Look up a subscriber's submission</td>
+                <td>Content Manager → Magazine Subscription Request</td>
+                <td>Not exposed on the public API for reading — admin-only</td>
+              </tr>
+              <tr>
+                <td>Add/edit a Printed Magazine section</td>
+                <td>Printed Magazine → section[] → add block</td>
+                <td>
+                  Only three block types are allowed: Intro Section, Member,
+                  Testimonials Section
+                </td>
+              </tr>
+              <tr>
+                <td>Add a membership plan to Printed Magazine</td>
+                <td>Printed Magazine → Member block → membership[]</td>
+                <td>
+                  Same component as
+                  <a href="#p56">Matrimony's Membership Section</a> — edits
+                  here don't affect the Matrimony page
+                </td>
+              </tr>
+              <tr>
+                <td>Add a testimonial</td>
+                <td>
+                  Testimonial → Create new → attach under Testimonials Section
+                </td>
+                <td>
+                  Set <code>layout</code> first — <code>image</code> only
+                  appears when <code>layout = image</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout" style="margin-top: 24px">
+            <b>Troubleshooting — Magazine Page</b><br /><br />
+            <b>Subscription form submits but nothing shows in the CMS?</b>
+            Check Content Manager → Magazine Subscription Request directly —
+            these entries are never returned by the public API by design.<br />
+            <b>Testimonial image not appearing?</b> Confirm
+            <code>layout</code> is set to <code>image</code>, not
+            <code>content</code>.<br />
+            <b>Printed Magazine page looks empty?</b> Confirm at least one
+            block exists in <code>section[]</code> and the entry is
+            Published — there's no <code>pageBase</code> here to separately
+            publish.<br />
+            <b>Old benefits/testimonials APIs referenced somewhere?</b> They
+            were removed — everything now lives in Printed Magazine's single
+            <code>section[]</code> dynamic zone.
+          </div>
+        </div>
+      </section>
     </div>
 
     <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top"
@@ -8157,6 +10421,38 @@
         biblePageSubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // Merchandise Page submenu toggle
+      const merchandiseToggle = document.getElementById("merchandiseToggle");
+      const merchandiseSubmenu = document.getElementById(
+        "merchandiseSubmenu"
+      );
+      merchandiseToggle.addEventListener("click", () => {
+        const expanded =
+          merchandiseToggle.getAttribute("aria-expanded") === "true";
+        merchandiseToggle.setAttribute("aria-expanded", String(!expanded));
+        merchandiseSubmenu.classList.toggle("collapsed", expanded);
+      });
+
+      // Matrimony Page submenu toggle
+      const matrimonyToggle = document.getElementById("matrimonyToggle");
+      const matrimonySubmenu = document.getElementById("matrimonySubmenu");
+      matrimonyToggle.addEventListener("click", () => {
+        const expanded =
+          matrimonyToggle.getAttribute("aria-expanded") === "true";
+        matrimonyToggle.setAttribute("aria-expanded", String(!expanded));
+        matrimonySubmenu.classList.toggle("collapsed", expanded);
+      });
+
+      // Magazine Page submenu toggle
+      const magazineToggle = document.getElementById("magazineToggle");
+      const magazineSubmenu = document.getElementById("magazineSubmenu");
+      magazineToggle.addEventListener("click", () => {
+        const expanded =
+          magazineToggle.getAttribute("aria-expanded") === "true";
+        magazineToggle.setAttribute("aria-expanded", String(!expanded));
+        magazineSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -8212,6 +10508,27 @@
                 biblePageSubmenu.classList.remove("collapsed");
               } else {
                 biblePageToggle.classList.remove("active");
+              }
+              if (merchandiseSubmenu.contains(link)) {
+                merchandiseToggle.classList.add("active");
+                merchandiseToggle.setAttribute("aria-expanded", "true");
+                merchandiseSubmenu.classList.remove("collapsed");
+              } else {
+                merchandiseToggle.classList.remove("active");
+              }
+              if (matrimonySubmenu.contains(link)) {
+                matrimonyToggle.classList.add("active");
+                matrimonyToggle.setAttribute("aria-expanded", "true");
+                matrimonySubmenu.classList.remove("collapsed");
+              } else {
+                matrimonyToggle.classList.remove("active");
+              }
+              if (magazineSubmenu.contains(link)) {
+                magazineToggle.classList.add("active");
+                magazineToggle.setAttribute("aria-expanded", "true");
+                magazineSubmenu.classList.remove("collapsed");
+              } else {
+                magazineToggle.classList.remove("active");
               }
             }
           });
