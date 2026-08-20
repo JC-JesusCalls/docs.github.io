@@ -886,6 +886,33 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="blessingPromiseToggle"
+            aria-expanded="false"
+            aria-controls="blessingPromiseSubmenu"
+          >
+            Blessings, Promises &amp; Prophecies
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="blessingPromiseSubmenu">
+            <a href="#p112"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p113"><span class="num">2</span> Today Blessing Global</a>
+            <a href="#p114"><span class="num">3</span> Today Promise Hero Banner</a>
+            <a href="#p115"><span class="num">4</span> Today Promise</a>
+            <a href="#p116"
+              ><span class="num">5</span> Monthly Promise Hero Banner</a
+            >
+            <a href="#p117"><span class="num">6</span> Monthly Promise</a>
+            <a href="#p118"><span class="num">7</span> Blog Hero Banner</a>
+            <a href="#p119"><span class="num">8</span> Blessing Blog</a>
+            <a href="#p120"><span class="num">9</span> Prophecie Hero Banner</a>
+            <a href="#p121"><span class="num">10</span> Prophecie</a>
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -15089,6 +15116,1739 @@
           this field's relation picker.
         </div>
       </section>
+      <!-- =============================================================== -->
+      <!-- ===== BLESSINGS, PROMISES & PROPHECIES — PARTS 112-121 ===== -->
+      <!-- =============================================================== -->
+
+      <!-- Summary table -->
+      <section
+        class="part"
+        id="p112"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">
+          Blessings, Promises &amp; Prophecies — Overview
+        </div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          Three related feature areas share one field vocabulary:
+          <b>Today's Promise</b>, <b>Monthly Promise</b>, the
+          <b>Blessing Blog</b>, and <b>Prophecies</b>. Each has its own
+          hero-banner single type plus a collection type for its entries.
+          All types use Draft &amp; Publish and are localized (en / ta / hi
+          / ml / te — pass <code>?locale=xx</code> to select a language).
+          Every endpoint below deep-populates related components and media
+          automatically — no <code>populate</code> query param needed
+          unless you want to override it. Public read permissions are
+          already enabled for every type below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Today Blessing Global</td>
+              <td>Single</td>
+              <td><code>/today-blessing-global</code></td>
+              <td>
+                Shared UI strings/icons for the Today Blessing tab switcher
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Today Promise Hero Banner</td>
+              <td>Single</td>
+              <td><code>/today-promise-hero-banner</code></td>
+              <td>
+                Hero banner, past-issues layout, subscribe banner, audio
+                card
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Today Promise</td>
+              <td>Collection</td>
+              <td><code>/today-promises</code></td>
+              <td>
+                Daily promise entries — supports public like / amen /
+                comment
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Monthly Promise Hero Banner</td>
+              <td>Single</td>
+              <td><code>/monthly-promise-hero-banner</code></td>
+              <td>Same shape as Today Promise Hero Banner</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Monthly Promise</td>
+              <td>Collection</td>
+              <td><code>/monthly-promises</code></td>
+              <td>
+                Monthly promise entries — read-only, no engagement
+                mutations
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Blog Hero Banner</td>
+              <td>Single</td>
+              <td><code>/blog-hero-banner</code></td>
+              <td>Hero, category chips, subscribe banner, search card</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Blessing Blog</td>
+              <td>Collection</td>
+              <td><code>/blessing-blogs</code></td>
+              <td>Blog posts — supports public like / amen</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Prophecie Hero Banner</td>
+              <td>Single</td>
+              <td><code>/prophecie-hero-banner</code></td>
+              <td>Hero, category chips, subscribe banner, year/search card</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Prophecie</td>
+              <td>Collection</td>
+              <td><code>/prophecies</code></td>
+              <td>Prophecy entries, plus <code>/prophecies/latest</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <b>Today's Promise and Monthly Promise share the same content
+          shape</b>
+          (<span class="field-tag">shared.blessing-promise-content-type</span>
+          / <span class="field-tag">shared.blessing-prayer-and-promise</span>
+          inside a dynamic zone) — only the collection they live in and the
+          date filtering differ. Everything documented for
+          <a href="#p115">Today Promise's <code>sections</code></a> applies
+          identically to
+          <a href="#p117"
+            >Monthly Promise's <code>monthly_promise</code></a
+          >.
+        </div>
+      </section>
+
+      <!-- ============ PART 113 — TODAY BLESSING GLOBAL ============ -->
+      <section class="part" id="p113">
+        <div class="part-kicker">Part 1</div>
+        <h2>Today Blessing Global</h2>
+        <span class="endpoint">/today-blessing-global</span>
+        <p class="lede">
+          Single type. Not a page — shared UI strings and icons for the
+          Today Blessing tab switcher (like / amen / comment / share /
+          promise / prayer icons, plus the tab and language labels).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>todayBlessingGlobal</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>switch_tab</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable <a href="#p1-1">Text component (1.1)</a> — one
+                row per tab label
+              </td>
+            </tr>
+            <tr>
+              <td><code>language</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable <a href="#p1-1">Text component (1.1)</a> — one
+                row per language label
+              </td>
+            </tr>
+            <tr>
+              <td><code>like_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+            <tr>
+              <td><code>amen_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+            <tr>
+              <td><code>comment_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+            <tr>
+              <td><code>share_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+            <tr>
+              <td><code>promise_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+            <tr>
+              <td><code>prayer_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>IconHub picker (SVG)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 114 — TODAY PROMISE HERO BANNER ============ -->
+      <section class="part" id="p114">
+        <div class="part-kicker">Part 2</div>
+        <h2>Today Promise Hero Banner</h2>
+        <span class="endpoint">/today-promise-hero-banner</span>
+        <p class="lede">
+          Single type. Hero banner, past-issues layout, subscribe banner
+          and audio card shown on the Today Promise landing page. This
+          exact shape (all four component types) is reused by
+          <a href="#p116">Monthly Promise Hero Banner</a> and
+          <a href="#p120">Prophecie Hero Banner</a> — documented once here.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>todayPromiseHeroBanner</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>hero_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">blocks.blessing-hero-banner</span> —
+                detailed below
+              </td>
+            </tr>
+            <tr>
+              <td><code>past_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">blocks.past-layout</span> —
+                detailed below
+              </td>
+            </tr>
+            <tr>
+              <td><code>subscribe_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag"
+                  >blocks.blessing-subscription-banner</span
+                >
+                — detailed below
+              </td>
+            </tr>
+            <tr>
+              <td><code>audio_card</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">shared.audio-card</span> — detailed
+                below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>hero_banner</code>
+            <span class="field-tag">blocks.blessing-hero-banner</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>blessingHeroBanner</code></td>
+                <td>UID</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-2">Description component (1.2)</a></td>
+              </tr>
+              <tr>
+                <td><code>desktop_background_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+              <tr>
+                <td><code>tab_background_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <a href="#p1-12">Background Type (1.12)</a> — tablet,
+                  falls back to desktop
+                </td>
+              </tr>
+              <tr>
+                <td><code>mobile_background_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <a href="#p1-12">Background Type (1.12)</a> — mobile,
+                  falls back to desktop
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>past_layout</code>
+            <span class="field-tag">blocks.past-layout</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>pastLayout</code></td>
+                <td>UID</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-2">Description component (1.2)</a></td>
+              </tr>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>subscribe_banner</code>
+            <span class="field-tag">blocks.blessing-subscription-banner</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>membership</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable
+                  <span class="field-tag">blocks.matrimony-membership</span>
+                  — title (<a href="#p1-1">1.1</a>), description
+                  (<a href="#p1-2">1.2</a>), button (<a href="#p1-3">1.3</a>)
+                </td>
+              </tr>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>audio_card</code>
+            <span class="field-tag">shared.audio-card</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-2">Description component (1.2)</a></td>
+              </tr>
+              <tr>
+                <td><code>audio_button</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-3">Button component (1.3)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 115 — TODAY PROMISE ============ -->
+      <section class="part" id="p115">
+        <div class="part-kicker">Part 3</div>
+        <h2>Today Promise</h2>
+        <span class="endpoint">/today-promises</span>
+        <p class="lede">
+          Collection type. One entry per day. Public API allows
+          <code>find</code>, <code>findOne</code>, and three engagement
+          mutations — <code>like</code>, <code>amen</code>,
+          <code>comments</code> — on the <code>sections</code> dynamic
+          zone.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>date</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>One published entry per date, ideally</td>
+            </tr>
+            <tr>
+              <td><code>sections</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Dynamic zone — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>sections</code> <span class="field-tag">dynamiczone</span>
+          </h3>
+          <p class="note">
+            Holds one or more blocks, each either a
+            <span class="field-tag"
+              >shared.blessing-promise-content-type</span
+            >
+            or a
+            <span class="field-tag">shared.blessing-prayer-and-promise</span>.
+            <b
+              >Only the first block type carries the like/amen counters and
+              comment list</b
+            >
+            — the engagement endpoints below target it by index and reject
+            any other block type with a 400.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>blessingPromiseContentType</code></td>
+                <td>UID</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>comment</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable <span class="field-tag">shared.comment</span> —
+                  <code>comment</code> (text), <code>icon</code> (IconHub
+                  picker)
+                </td>
+              </tr>
+              <tr>
+                <td><code>vimeo_video</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <span class="field-tag">blocks.vimeo-video</span> —
+                  <code>slugName</code>, <code>title</code> (text),
+                  <code>image</code> (upload), <code>media_url</code> (text)
+                </td>
+              </tr>
+              <tr>
+                <td><code>liker_count</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Big integer — incremented by <code>PUT .../like</code>,
+                  not editor-managed
+                </td>
+              </tr>
+              <tr>
+                <td><code>amen_count</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Big integer — incremented by <code>PUT .../amen</code>,
+                  not editor-managed
+                </td>
+              </tr>
+              <tr>
+                <td><code>image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Upload — images or files</td>
+              </tr>
+              <tr>
+                <td><code>past_layout</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <span class="field-tag">blocks.promise-past-layout</span>
+                  — <code>title</code> / <code>author</code>
+                  (<a href="#p1-1">1.1</a>), <code>description</code>
+                  (<a href="#p1-2">1.2</a>), <code>past_layout_image</code>
+                  (<a href="#p1-12">1.12</a>), <code>CTAbutton</code>
+                  (<a href="#p1-3">1.3</a>)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note" style="margin-top: 10px">
+            <span class="field-tag">shared.blessing-prayer-and-promise</span>
+            — the alternate block type — has
+            <b>no counter or comment fields</b>, so it can't be targeted by
+            the engagement endpoints: <code>promise_description</code>
+            (richtext), <code>prayer_description</code>
+            (<a href="#p1-2">1.2</a>), <code>prayer_title</code> /
+            <code>promise_title</code> (<a href="#p1-1">1.1</a>),
+            <code>background_image</code> / <code>tab_image</code> /
+            <code>mobile_image</code> (<a href="#p1-12">1.12</a>,
+            tablet/mobile fall back to <code>background_image</code>).
+          </p>
+        </div>
+
+        <div class="sub">
+          <h3>Query params — <code>GET /today-promises</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>date</code></td>
+                <td>Exact match, <code>YYYY-MM-DD</code></td>
+              </tr>
+              <tr>
+                <td><code>excludeDate</code> / <code>excludedate</code></td>
+                <td>Excludes an exact date</td>
+              </tr>
+              <tr>
+                <td><code>sort</code></td>
+                <td>Defaults to <code>date:desc</code></td>
+              </tr>
+              <tr>
+                <td><code>pagination[pageSize]</code></td>
+                <td>Defaults to <code>10</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>Engagement endpoints</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Path</th>
+                <th>Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>PUT</code></td>
+                <td><code>/today-promises/:id/like</code></td>
+                <td>Increments <code>liker_count</code> on one section block</td>
+              </tr>
+              <tr>
+                <td><code>PUT</code></td>
+                <td><code>/today-promises/:id/amen</code></td>
+                <td>Increments <code>amen_count</code> on one section block</td>
+              </tr>
+              <tr>
+                <td><code>PUT</code></td>
+                <td><code>/today-promises/:id/comments</code></td>
+                <td>Appends a comment to one section block</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">
+            Body: <code>{ "contentIndex": 0, "locale": "en" }</code> for
+            like/amen (both optional, default to <code>0</code> and the
+            <code>?locale</code> query param). Comments additionally take
+            <code>comment</code> (required, max 1000 characters, HTML
+            stripped server-side) and an optional <code>icon</code>. All
+            three return the full, freshly-published entry.
+          </p>
+          <div class="callout">
+            <b>Rate-limited</b> to 10 requests per IP per 60 seconds
+            (<code>global::engagement-rate-limit</code>). These endpoints
+            are called by the public frontend automatically when a visitor
+            taps Like/Amen/Comment — editors don't need to call them
+            manually.
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Adding a day's promise:</b> Content Manager → Today Promise →
+          Create new entry → set <code>date</code> → add a
+          <code>sections</code> block (usually one
+          <span class="field-tag"
+            >shared.blessing-promise-content-type</span
+          >) → fill in title/media/past layout → Publish.
+          <code>liker_count</code> / <code>amen_count</code> /
+          <code>comment</code> start empty and fill up from the live site —
+          don't hand-seed them.
+        </div>
+      </section>
+
+      <!-- ============ PART 116 — MONTHLY PROMISE HERO BANNER ============ -->
+      <section class="part" id="p116">
+        <div class="part-kicker">Part 4</div>
+        <h2>Monthly Promise Hero Banner</h2>
+        <span class="endpoint">/monthly-promise-hero-banner</span>
+        <p class="lede">
+          Single type. Identical shape to
+          <a href="#p114">Today Promise Hero Banner (Part 2)</a> — same
+          four fields, same component types — scoped to the Monthly
+          Promise landing page instead.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>monthlyPromiseHeroBanner</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>hero_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114">blocks.blessing-hero-banner, see Part 2</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>past_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p114">blocks.past-layout, see Part 2</a></td>
+            </tr>
+            <tr>
+              <td><code>subscribe_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114"
+                  >blocks.blessing-subscription-banner, see Part 2</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>audio_card</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p114">shared.audio-card, see Part 2</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 117 — MONTHLY PROMISE ============ -->
+      <section class="part" id="p117">
+        <div class="part-kicker">Part 5</div>
+        <h2>Monthly Promise</h2>
+        <span class="endpoint">/monthly-promises</span>
+        <p class="lede">
+          Collection type. One entry per month. <b>Read-only</b> — no
+          like/amen/comment mutations (those live on
+          <a href="#p115">Today Promise</a> and
+          <a href="#p119">Blessing Blog</a> only).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>date</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Use the 1st of the month, e.g. <code>2026-08-01</code></td>
+            </tr>
+            <tr>
+              <td><code>monthly_promise</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Dynamic zone — same two block types as
+                <a href="#p115">Today Promise's <code>sections</code> (Part 3)</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="sub">
+          <h3>Query params — <code>GET /monthly-promises</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>month</code></td>
+                <td>
+                  <code>YYYY-MM</code> — filters <code>date</code> to that
+                  calendar month
+                </td>
+              </tr>
+              <tr>
+                <td><code>date</code></td>
+                <td>Exact match, <code>YYYY-MM-DD</code></td>
+              </tr>
+              <tr>
+                <td><code>excludeDate</code> / <code>excludedate</code></td>
+                <td>Excludes an exact date</td>
+              </tr>
+              <tr>
+                <td><code>sort</code></td>
+                <td>Defaults to <code>date:desc</code></td>
+              </tr>
+              <tr>
+                <td><code>pagination[pageSize]</code></td>
+                <td>Defaults to <code>10</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 118 — BLOG HERO BANNER ============ -->
+      <section class="part" id="p118">
+        <div class="part-kicker">Part 6</div>
+        <h2>Blog Hero Banner</h2>
+        <span class="endpoint">/blog-hero-banner</span>
+        <p class="lede">
+          Single type. Hero banner, category chips, subscribe banner and
+          search card for the Blessing Blog listing page.
+        </p>
+        <div class="callout">
+          This is a <b>single type</b>, so its REST path uses the schema's
+          <code>singularName</code> (<code>blog-hero-banner</code>), not a
+          plural form — same convention as every other hero-banner endpoint
+          on this page.
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>blogHeroBanner</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>blog_hero_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114">blocks.blessing-hero-banner, see Part 2</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>past_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p114">blocks.past-layout, see Part 2</a></td>
+            </tr>
+            <tr>
+              <td><code>category</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable <span class="field-tag">shared.category</span> —
+                detailed below
+              </td>
+            </tr>
+            <tr>
+              <td><code>blog_subcribe_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114"
+                  >blocks.blessing-subscription-banner, see Part 2</a
+                >
+                — field name spelled as checked in ("subcribe")
+              </td>
+            </tr>
+            <tr>
+              <td><code>search</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">shared.search-inline-card</span> —
+                detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>category</code>
+            <span class="field-tag">shared.category</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>search</code>
+            <span class="field-tag">shared.search-inline-card</span>
+          </h3>
+          <p class="note">
+            All seven fields are the same
+            <a href="#p1-1">Text component (1.1)</a>.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>search_inline</code></td>
+                <td>Placeholder / label for the search input</td>
+              </tr>
+              <tr>
+                <td><code>author_inline</code></td>
+                <td>Label for the author filter</td>
+              </tr>
+              <tr>
+                <td><code>date_inline</code></td>
+                <td>Label for the date filter</td>
+              </tr>
+              <tr>
+                <td><code>search_name</code></td>
+                <td>Search field name/heading</td>
+              </tr>
+              <tr>
+                <td><code>author_label</code></td>
+                <td>Author column heading</td>
+              </tr>
+              <tr>
+                <td><code>date_label</code></td>
+                <td>Date column heading</td>
+              </tr>
+              <tr>
+                <td><code>select_button_name</code></td>
+                <td>Submit/select button label</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 119 — BLESSING BLOG ============ -->
+      <section class="part" id="p119">
+        <div class="part-kicker">Part 7</div>
+        <h2>Blessing Blog</h2>
+        <span class="endpoint">/blessing-blogs</span>
+        <p class="lede">
+          Collection type. Blog post entries. Public API allows
+          <code>find</code>, <code>findOne</code>, and two engagement
+          mutations — <code>like</code>, <code>amen</code> — on the
+          <code>blog_data</code> block.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>blog_data</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">blocks.blessing-blog</span> —
+                detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>blog_data</code>
+            <span class="field-tag">blocks.blessing-blog</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>blessingBlog</code></td>
+                <td>UID</td>
+              </tr>
+              <tr>
+                <td><code>date</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Sort/search key — see query params below</td>
+              </tr>
+              <tr>
+                <td><code>date_icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>IconHub picker (SVG)</td>
+              </tr>
+              <tr>
+                <td><code>like</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Big integer — incremented by <code>PUT .../like</code>,
+                  not editor-managed
+                </td>
+              </tr>
+              <tr>
+                <td><code>amen</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Big integer — incremented by <code>PUT .../amen</code>,
+                  not editor-managed
+                </td>
+              </tr>
+              <tr>
+                <td><code>comment</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable <span class="field-tag">shared.comment</span> —
+                  <code>comment</code> (text), <code>icon</code> (IconHub
+                  picker)
+                </td>
+              </tr>
+              <tr>
+                <td><code>tagline</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-13">Tagline component (1.13)</a></td>
+              </tr>
+              <tr>
+                <td><code>category</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <a href="#p1-13">Tagline component (1.13)</a> —
+                  <b>not</b> the
+                  <a href="#p118">shared.category used by the hero banner</a
+                  >; used for search/filter matching only
+                </td>
+              </tr>
+              <tr>
+                <td><code>duration</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string (e.g. "5 min read")</td>
+              </tr>
+              <tr>
+                <td><code>duration_icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>IconHub picker (SVG)</td>
+              </tr>
+              <tr>
+                <td><code>scroll_layout</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <span class="field-tag">shared.scroll-layout</span> —
+                  grid-card preview, see below
+                </td>
+              </tr>
+              <tr>
+                <td><code>blog_layout</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <span class="field-tag">shared.blog-layout</span> — full
+                  detail-page body, see below
+                </td>
+              </tr>
+              <tr>
+                <td><code>blogPageLayout</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <span class="field-tag">shared.blog-page-layout</span> —
+                  detail-page heading, see below
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>scroll_layout</code>
+            <span class="field-tag">shared.scroll-layout</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>scroll_banner_title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-13">Tagline component (1.13)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-2">Description component (1.2)</a></td>
+              </tr>
+              <tr>
+                <td><code>author</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>showDot</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>true</code></td>
+                <td>Boolean — bullet separator between title/author</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>image</code> / <code>tab_image</code> /
+                  <code>mobile_image</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Uploads — desktop/tablet/mobile card image</td>
+              </tr>
+              <tr>
+                <td><code>CTAbutton</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-3">Button component (1.3)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>blog_layout</code>
+            <span class="field-tag">shared.blog-layout</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>layout_title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-2">Description component (1.2)</a></td>
+              </tr>
+              <tr>
+                <td><code>author</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <a href="#p1-2">Description component (1.2)</a> —
+                  <b>not</b> the Text component used elsewhere for author
+                  fields
+                </td>
+              </tr>
+              <tr>
+                <td><code>layout_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+              <tr>
+                <td><code>blog_content</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Rich text blocks (Strapi block editor) — the full article
+                  body
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>image</code> / <code>tab_image</code> /
+                  <code>mobile_image</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Uploads — desktop/tablet/mobile detail-page image</td>
+              </tr>
+              <tr>
+                <td><code>CTAbutton</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-3">Button component (1.3)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>blogPageLayout</code>
+            <span class="field-tag">shared.blog-page-layout</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>eyebrow</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-13">Tagline component (1.13)</a></td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  <a href="#p1-1">Text component (1.1)</a> — note this is
+                  Text, not Description, unlike most other "description"
+                  fields on this page
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>Query params — <code>GET /blessing-blogs</code></h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>search</code></td>
+                <td>
+                  Matches grid title, detail title, author, or category
+                  (contains, case-insensitive)
+                </td>
+              </tr>
+              <tr>
+                <td><code>date</code></td>
+                <td>Matches <code>blog_data.date</code></td>
+              </tr>
+              <tr>
+                <td><code>author</code></td>
+                <td>
+                  Matches <code>blog_data.blog_layout.author.label</code>
+                  (contains, case-insensitive)
+                </td>
+              </tr>
+              <tr>
+                <td><code>category</code></td>
+                <td>
+                  Matches <code>blog_data.category.label</code> (contains,
+                  case-insensitive)
+                </td>
+              </tr>
+              <tr>
+                <td><code>sort</code></td>
+                <td>
+                  Defaults to <code>createdAt:desc</code>.
+                  <code>sort=date:*</code> is rewritten to
+                  <code>createdAt:*</code> — there's no top-level
+                  <code>date</code> attribute on this type
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>Engagement endpoints</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Path</th>
+                <th>Effect</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>PUT</code></td>
+                <td><code>/blessing-blogs/:id/like</code></td>
+                <td>Increments <code>like</code></td>
+              </tr>
+              <tr>
+                <td><code>PUT</code></td>
+                <td><code>/blessing-blogs/:id/amen</code></td>
+                <td>Increments <code>amen</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="note">
+            Body: <code>{ "contentIndex": 0, "locale": "en" }</code> (both
+            optional). Returns the full, freshly-published entry.
+          </p>
+          <div class="callout">
+            <b>Rate-limited</b> to 10 requests per IP per 60 seconds, same
+            as <a href="#p115">Today Promise's engagement endpoints</a> —
+            called automatically by the public frontend, not something
+            editors trigger.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 120 — PROPHECIE HERO BANNER ============ -->
+      <section class="part" id="p120">
+        <div class="part-kicker">Part 8</div>
+        <h2>Prophecie Hero Banner</h2>
+        <span class="endpoint">/prophecie-hero-banner</span>
+        <p class="lede">
+          Single type. Hero banner, category chips, subscribe banner and
+          search card for the Prophecie listing page.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>prophecieHeroBanner</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>hero_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114">blocks.blessing-hero-banner, see Part 2</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>past_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p114">blocks.past-layout, see Part 2</a></td>
+            </tr>
+            <tr>
+              <td><code>subscribe_banner</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p114"
+                  >blocks.blessing-subscription-banner, see Part 2</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td><code>category</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Repeatable <a href="#p118">shared.category, see Part 6</a></td>
+            </tr>
+            <tr>
+              <td><code>search</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">shared.prophecie-search-card</span>
+                — detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>search</code>
+            <span class="field-tag">shared.prophecie-search-card</span>
+          </h3>
+          <p class="note">
+            All four fields are the same
+            <a href="#p1-1">Text component (1.1)</a>.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>search_name</code></td>
+                <td>Search field name/heading</td>
+              </tr>
+              <tr>
+                <td><code>year_label</code></td>
+                <td>Year filter heading</td>
+              </tr>
+              <tr>
+                <td><code>search_inline</code></td>
+                <td>Placeholder / label for the search input</td>
+              </tr>
+              <tr>
+                <td><code>year_inline</code></td>
+                <td>Placeholder / label for the year filter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 121 — PROPHECIE ============ -->
+      <section class="part" id="p121">
+        <div class="part-kicker">Part 9</div>
+        <h2>Prophecie</h2>
+        <span class="endpoint">/prophecies</span>
+        <p class="lede">
+          Collection type. Prophecy entries. Public API allows
+          <code>find</code>, <code>findOne</code>, and <code>latest</code>
+          (a custom route). No like/amen/comment mutation endpoints exist
+          for this type — the counter fields below are static,
+          editor-visible values only.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p1-1">Text component (1.1)</a></td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td><a href="#p1-2">Description component (1.2)</a></td>
+            </tr>
+            <tr>
+              <td><code>comment</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p119">shared.comment, see Part 7</a> — single,
+                not repeatable, here
+              </td>
+            </tr>
+            <tr>
+              <td><code>like_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Big integer — a <b>counter value</b>, despite the name;
+                predates the icon-picker fields used on other types in this
+                group
+              </td>
+            </tr>
+            <tr>
+              <td><code>amen_count</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Big integer — counter value</td>
+            </tr>
+            <tr>
+              <td><code>comment_icon</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Big integer — counter value, despite the name</td>
+            </tr>
+            <tr>
+              <td><code>date</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Used for sort and search filters</td>
+            </tr>
+            <tr>
+              <td><code>duration</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Plain string</td>
+            </tr>
+            <tr>
+              <td><code>category</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Plain string — <b>not</b> a component, unlike the hero
+                banner's repeatable <a href="#p118">shared.category</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>vimeo_vedio</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <a href="#p1-4">Media component (1.4)</a> — field name
+                spelled as checked in ("vedio")
+              </td>
+            </tr>
+            <tr>
+              <td><code>prophecie_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <span class="field-tag">shared.prophecie-past-layout</span>
+                — detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>prophecie_layout</code>
+            <span class="field-tag">shared.prophecie-past-layout</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>author</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-1">Text component (1.1)</a></td>
+              </tr>
+              <tr>
+                <td><code>past_layout_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td><a href="#p1-12">Background Type component (1.12)</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>Routes &amp; query params</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Path</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/prophecies</code></td>
+                <td>List, supports the params below</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/prophecies/:id</code></td>
+                <td>Fetch one entry</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/prophecies/latest</code></td>
+                <td>Single newest published entry (by <code>date</code> desc)</td>
+              </tr>
+            </tbody>
+          </table>
+          <table style="margin-top: 10px">
+            <thead>
+              <tr>
+                <th>Param</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>date</code></td>
+                <td>Exact match, <code>YYYY-MM-DD</code></td>
+              </tr>
+              <tr>
+                <td><code>excludeDate</code> / <code>excludedate</code></td>
+                <td>Excludes an exact date</td>
+              </tr>
+              <tr>
+                <td><code>search</code></td>
+                <td>Matches <code>title.label</code> (contains, case-insensitive)</td>
+              </tr>
+              <tr>
+                <td><code>sort</code></td>
+                <td>Defaults to <code>date:desc</code></td>
+              </tr>
+              <tr>
+                <td><code>pagination[pageSize]</code></td>
+                <td>Defaults to <code>10</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
 
     <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top"
@@ -15237,6 +16997,20 @@
         prayForMissionSubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // Blessings, Promises & Prophecies submenu toggle
+      const blessingPromiseToggle = document.getElementById(
+        "blessingPromiseToggle"
+      );
+      const blessingPromiseSubmenu = document.getElementById(
+        "blessingPromiseSubmenu"
+      );
+      blessingPromiseToggle.addEventListener("click", () => {
+        const expanded =
+          blessingPromiseToggle.getAttribute("aria-expanded") === "true";
+        blessingPromiseToggle.setAttribute("aria-expanded", String(!expanded));
+        blessingPromiseSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -15341,6 +17115,13 @@
                 prayForMissionSubmenu.classList.remove("collapsed");
               } else {
                 prayForMissionToggle.classList.remove("active");
+              }
+              if (blessingPromiseSubmenu.contains(link)) {
+                blessingPromiseToggle.classList.add("active");
+                blessingPromiseToggle.setAttribute("aria-expanded", "true");
+                blessingPromiseSubmenu.classList.remove("collapsed");
+              } else {
+                blessingPromiseToggle.classList.remove("active");
               }
             }
           });
