@@ -913,6 +913,26 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="contactUsToggle"
+            aria-expanded="false"
+            aria-controls="contactUsSubmenu"
+          >
+            Contact Us Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="contactUsSubmenu">
+            <a href="#p122"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p123"><span class="num">2</span> Contact Us Page</a>
+            <a href="#p124"><span class="num">3</span> Contact List Section</a>
+            <a href="#p125"><span class="num">4</span> Form Section</a>
+            <a href="#p126"><span class="num">5</span> FAQ Section</a>
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -938,6 +958,9 @@
         <a href="#p73"
           ><span class="num">8</span> Quick How-To Recap - Magazine Page</a
         >
+        <a href="#p127"
+          ><span class="num">9</span> Quick How-To Recap - Contact Us Page</a
+        >
       </div>
     </nav>
 
@@ -952,8 +975,9 @@
           <strong>Donate Page</strong>, <strong>Bible Page</strong>,
           <strong>Merchandise Page</strong>, <strong>Matrimony Page</strong>,
           <strong>Magazine Page</strong>, <strong>Pray For Me Page</strong>,
-          <strong>Pray India Page</strong>, <strong>Prayer Tower Page</strong>
-          and <strong>Pray For Mission Page</strong> — whether it's required,
+          <strong>Pray India Page</strong>, <strong>Prayer Tower Page</strong>,
+          <strong>Pray For Mission Page</strong> and
+          <strong>Contact Us Page</strong> — whether it's required,
           its default value, allowed values, and what it changes on the live
           site.
           Required / Default values are taken directly from the Strapi schema
@@ -12606,7 +12630,8 @@
               <td>Collection</td>
               <td><code>/prayer-towers</code></td>
               <td>
-                The actual tower locations — address, contact, hours, map
+                Tower locations — address, contact, hours, map, gallery,
+                follow URLs
               </td>
             </tr>
             <tr>
@@ -12651,7 +12676,7 @@
               <td>
                 <code>/prayer-tower-visit-your-nearest-prayer-tower-section</code>
               </td>
-              <td>State/city picker + map that looks up Prayer Towers</td>
+              <td>State/city picker + map + Call / Directions / Follow CTAs</td>
             </tr>
             <tr>
               <td>9</td>
@@ -12997,8 +13022,81 @@
                 <code>chooseLocation = Location URL</code> (the default)
               </td>
             </tr>
+            <tr>
+              <td><code>prayerTowerGallery[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable Media (1.4) — photo/video gallery for this tower.
+                <b>Max 20</b> items
+              </td>
+            </tr>
+            <tr>
+              <td><code>followURLs[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable dropdown item — social / follow links shown on the
+                tower card (used with the Visit section's
+                <code>followCTA</code>)
+              </td>
+            </tr>
           </tbody>
         </table>
+
+        <div class="sub">
+          <h3>
+            <code>workingHours</code>
+            <span class="field-tag">shared.working-hours</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>startTime</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>Time — opening hour</td>
+              </tr>
+              <tr>
+                <td><code>endTime</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>Time — closing hour</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>followURLs[]</code>
+            <span class="field-tag">shared.dropdown-item</span>
+          </h3>
+          <p class="note">
+            One entry = one follow/social URL shown on the tower card.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>textValue</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>Plain string — the URL or label the frontend uses</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <div class="sub">
           <h3>
@@ -13345,9 +13443,10 @@
         >
         <p class="lede">
           Single type. Copy + button labels + colors for the state/city
-          picker and map that let a visitor find their nearest tower. The
-          list data itself comes from State Item, City Item and Prayer
-          Towers (Parts 2–3), whose routes are configurable here.
+          picker and map that let a visitor find their nearest tower. Result
+          cards also expose optional Call, Get Directions, and Follow
+          buttons. The list data itself comes from State Item, City Item and
+          Prayer Towers (Parts 2–3), whose routes are configurable here.
         </p>
         <table>
           <thead>
@@ -13411,7 +13510,34 @@
               <td><code>viewDetailsCTA</code></td>
               <td><span class="req-no">No</span></td>
               <td>—</td>
-              <td>Button (1.3)</td>
+              <td>Button (1.3) — opens the selected tower's details</td>
+            </tr>
+            <tr>
+              <td><code>callNowCTA</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Button (1.3) — call the selected tower using
+                <code>contactDetails.mobileNumbers</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>getDirectionCTA</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Button (1.3) — opens directions using the tower's chosen
+                location method (URL, lat/long, or picker)
+              </td>
+            </tr>
+            <tr>
+              <td><code>followCTA</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Button (1.3) — follow / social action; links come from the
+                tower's <code>followURLs[]</code>
+              </td>
             </tr>
             <tr>
               <td><code>prayerTowersUrl</code></td>
@@ -16849,6 +16975,548 @@
           </table>
         </div>
       </section>
+
+      <!-- =============================================================== -->
+      <!-- ============ CONTACT US PAGE — PARTS 122-127 ================== -->
+      <!-- =============================================================== -->
+
+      <section
+        class="part"
+        id="p122"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Contact Us Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Contact Us page is composed of the following Single-Type content
+          types, plus the shared Contact Form collection used by the form
+          section. All types use Draft &amp; Publish and are localized
+          (en / ta / hi / ml / te).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Contact Us Page</td>
+              <td>Single</td>
+              <td><code>/contact-us-page</code></td>
+              <td>Page base + slug</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Contact Us Contact List Section</td>
+              <td>Single</td>
+              <td><code>/contact-us-contact-list-section</code></td>
+              <td>1–3 contact cards (phone, email, visit, etc.)</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Contact Us Form Section</td>
+              <td>Single</td>
+              <td><code>/contact-us-form-section</code></td>
+              <td>Heading + attached Contact Form + form alignment</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Contact Us FAQ Section</td>
+              <td>Single</td>
+              <td><code>/contact-us-faq-section</code></td>
+              <td>FAQ accordion (question + answer pairs)</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Contact Form</td>
+              <td>Collection</td>
+              <td><code>/contact-forms</code></td>
+              <td>
+                Shared form builder — see
+                <a href="#p35">Donate Page, Contact Form</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="part" id="p123">
+        <div class="part-kicker">Part 1</div>
+        <h2>Contact Us Page</h2>
+        <span class="endpoint">/contact-us-page</span>
+        <p class="lede">
+          Single type. Page shell — sets the URL slug and base metadata shared
+          with every locale. Section content lives in the three single types
+          below.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>Contact Us Page</code></td>
+              <td>
+                UID — uniquely identifies this page's URL segment
+              </td>
+            </tr>
+            <tr>
+              <td><code>pageBase</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Page Base component — detailed below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>pageBase</code>
+            <span class="field-tag">shared.page-base</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>pageTitle</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Browser/page title for the Contact Us page</td>
+              </tr>
+              <tr>
+                <td><code>slug</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Page identifier used by the frontend</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default purple-500)</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>primaryColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default purple-500)</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>seo</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  SEO (1.11) — if added, <code>metaTitle</code> and
+                  <code>metaDescription</code> are required
+                </td>
+              </tr>
+              <tr>
+                <td><code>isPublished</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>false</code></td>
+                <td>
+                  Master page flag — <b>set to true</b> or the frontend treats
+                  the page as unpublished
+                </td>
+              </tr>
+              <tr>
+                <td><code>sectionOrder[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable section-order — keep
+                  <code>sectionKey</code> / <code>url</code> as the frontend
+                  expects; use <code>order</code> and <code>enabled</code> for
+                  routine changes
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          ⚠️
+          <b>Set <code>pageBase.isPublished = true</code></b> or the frontend
+          treats the page as unpublished even after clicking Publish in Strapi.
+        </div>
+      </section>
+
+      <section class="part" id="p124">
+        <div class="part-kicker">Part 2</div>
+        <h2>Contact Us Contact List Section</h2>
+        <span class="endpoint">/contact-us-contact-list-section</span>
+        <p class="lede">
+          Single type. Card strip of contact methods (for example Call, Email,
+          Visit). Between <b>1 and 3</b> cards.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>Contact Us Contact List Section</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>backgroundColor</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Hex color (color-picker customField)</td>
+            </tr>
+            <tr>
+              <td><code>cardsBorderRadius</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>8</code></td>
+              <td>Integer px, min 1, max 100</td>
+            </tr>
+            <tr>
+              <td><code>contactUsItemsList[]</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>
+                Repeatable contact card —
+                <span class="field-tag">blocks.contact-us-contact-component</span>
+                — <b>min 1, max 3</b>. Detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>contactUsItemsList[]</code>
+            <span class="field-tag">blocks.contact-us-contact-component</span>
+          </h3>
+          <p class="note">One entry = one contact card on the page.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — card heading (e.g. "Call Us")</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>contactItems[]</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>
+                  Repeatable Text with Icon — phone numbers, emails, or
+                  addresses shown on the card. Detailed below
+                </td>
+              </tr>
+              <tr>
+                <td><code>ctaButton</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — optional card action</td>
+              </tr>
+              <tr>
+                <td><code>cardBackgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color (color-picker customField)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>contactItems[]</code>
+            <span class="field-tag">shared.text-with-icon-component</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>itemText</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Text (1.1) — the number, email, or address line</td>
+              </tr>
+              <tr>
+                <td><code>icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>IconHub picker — icon shown next to the text</td>
+              </tr>
+              <tr>
+                <td><code>isCopyOptionEnabled</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>
+                  When true, the frontend shows a copy-to-clipboard control
+                </td>
+              </tr>
+              <tr>
+                <td><code>copyIconColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color for the copy icon</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <b>Stay within 3 cards.</b> Strapi will not save a 4th
+          <code>contactUsItemsList</code> entry. Publish this section after
+          editing or the live page keeps the previous published cards.
+        </div>
+      </section>
+
+      <section class="part" id="p125">
+        <div class="part-kicker">Part 3</div>
+        <h2>Contact Us Form Section</h2>
+        <span class="endpoint">/contact-us-form-section</span>
+        <p class="lede">
+          Single type. Heading, background, and which Contact Form entry
+          visitors submit. The form fields themselves live in the shared
+          Contact Form collection (same builder as Donate / Pray For Me).
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>Contact Us Form Section</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>background</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Background Type (1.12) — color, image, or gradient
+              </td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>contact_us_form</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>
+                Relation → Contact Form (one-to-one). The form
+                <b>must already exist and be Published</b> — see
+                <a href="#p35">Part 35</a>
+              </td>
+            </tr>
+            <tr>
+              <td><code>formAlignment</code></td>
+              <td><span class="req-no">No</span></td>
+              <td><code>right</code></td>
+              <td>
+                Enumeration — <code>left</code> or <code>right</code>. Which
+                side the form sits on
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <b>Attach a published Contact Form.</b> An unpublished or missing
+          <code>contact_us_form</code> relation means the form area renders
+          empty even after you publish this section.
+        </div>
+      </section>
+
+      <section class="part" id="p126">
+        <div class="part-kicker">Part 4</div>
+        <h2>Contact Us FAQ Section</h2>
+        <span class="endpoint">/contact-us-faq-section</span>
+        <p class="lede">
+          Single type. Heading plus a repeatable list of question/answer
+          pairs for the FAQ accordion.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>Contact Us FAQ Section</code></td>
+              <td>UID</td>
+            </tr>
+            <tr>
+              <td><code>backgroundColor</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Hex color (color-picker customField)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Text (1.1) — section heading</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2) — intro under the heading</td>
+            </tr>
+            <tr>
+              <td><code>faqItems[]</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>
+                Repeatable FAQ Component — at least one pair. Detailed below
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>faqItems[]</code>
+            <span class="field-tag">shared.faq-component</span>
+          </h3>
+          <p class="note">One entry = one accordion row.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>question</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>Text (1.1) — accordion title</td>
+              </tr>
+              <tr>
+                <td><code>answer</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>Description (1.2) — expanded body</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <b>Add an FAQ:</b> open Contact Us FAQ Section → add a
+          <code>faqItems</code> row → fill question + answer → Save → Publish.
+          Repeat for each locale.
+        </div>
+      </section>
+
+      <section class="part" id="p127" style="border-bottom: none">
+        <div class="part-kicker">Part 5</div>
+        <h2>Quick How-To Recap — Contact Us Page</h2>
+        <table class="recap-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Where in Strapi</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Publish the page</td>
+              <td>Contact Us Page → pageBase → isPublished</td>
+              <td>Must be <code>true</code>, then Save → Publish</td>
+            </tr>
+            <tr>
+              <td>Change contact cards</td>
+              <td>Contact Us Contact List Section → contactUsItemsList</td>
+              <td>1–3 cards; each card needs at least one contactItems row</td>
+            </tr>
+            <tr>
+              <td>Change the form fields</td>
+              <td>Contact Form collection → the attached entry</td>
+              <td>
+                Then confirm Contact Us Form Section → contact_us_form still
+                points at that Published entry
+              </td>
+            </tr>
+            <tr>
+              <td>Move the form left/right</td>
+              <td>Contact Us Form Section → formAlignment</td>
+              <td><code>left</code> or <code>right</code> (default right)</td>
+            </tr>
+            <tr>
+              <td>Add / edit FAQs</td>
+              <td>Contact Us FAQ Section → faqItems</td>
+              <td>question + answer are both required</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </div>
 
     <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top"
@@ -17011,6 +17679,16 @@
         blessingPromiseSubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // Contact Us Page submenu toggle
+      const contactUsToggle = document.getElementById("contactUsToggle");
+      const contactUsSubmenu = document.getElementById("contactUsSubmenu");
+      contactUsToggle.addEventListener("click", () => {
+        const expanded =
+          contactUsToggle.getAttribute("aria-expanded") === "true";
+        contactUsToggle.setAttribute("aria-expanded", String(!expanded));
+        contactUsSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -17122,6 +17800,13 @@
                 blessingPromiseSubmenu.classList.remove("collapsed");
               } else {
                 blessingPromiseToggle.classList.remove("active");
+              }
+              if (contactUsSubmenu.contains(link)) {
+                contactUsToggle.classList.add("active");
+                contactUsToggle.setAttribute("aria-expanded", "true");
+                contactUsSubmenu.classList.remove("collapsed");
+              } else {
+                contactUsToggle.classList.remove("active");
               }
             }
           });
