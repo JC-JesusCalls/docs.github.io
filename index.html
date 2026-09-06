@@ -933,6 +933,78 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="liveStreamToggle"
+            aria-expanded="false"
+            aria-controls="liveStreamSubmenu"
+          >
+            Live Stream Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="liveStreamSubmenu">
+            <a href="#p128"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p129"><span class="num">2</span> Live Stream</a>
+            <a href="#p130"><span class="num">3</span> Live Stream Banner</a>
+            <a href="#p131"
+              ><span class="num">4</span> Live Stream Register Now</a
+            >
+            <a href="#p132"><span class="num">5</span> Live Stream Check</a>
+            <a href="#p133"><span class="num">6</span> Live Stream Archive</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="prayerAcademyToggle"
+            aria-expanded="false"
+            aria-controls="prayerAcademySubmenu"
+          >
+            Prayer Academy Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="prayerAcademySubmenu">
+            <a href="#p135"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p136"><span class="num">2</span> Prayer Academy</a>
+            <a href="#p137"><span class="num">3</span> Prayer Academy Banner</a>
+            <a href="#p138"><span class="num">4</span> Prayer Academy Course</a>
+            <a href="#p139"
+              ><span class="num">5</span> Our Direction (Mission &amp;
+              Vision)</a
+            >
+            <a href="#p140"><span class="num">6</span> Prayer Academy About</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="mediaLibraryPageToggle"
+            aria-expanded="false"
+            aria-controls="mediaLibraryPageSubmenu"
+          >
+            Media Library Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="mediaLibraryPageSubmenu">
+            <a href="#p142"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p143"><span class="num">2</span> Media Library</a>
+            <a href="#p144"><span class="num">3</span> Media Library Part</a>
+            <a href="#p145"
+              ><span class="num">4</span> Media Library Banner &amp; Part
+              Blocks</a
+            >
+            <a href="#p146"
+              ><span class="num">5</span> Media Library Category</a
+            >
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -961,6 +1033,17 @@
         <a href="#p127"
           ><span class="num">9</span> Quick How-To Recap - Contact Us Page</a
         >
+        <a href="#p134"
+          ><span class="num">10</span> Quick How-To Recap - Live Stream Page</a
+        >
+        <a href="#p141"
+          ><span class="num">11</span> Quick How-To Recap - Prayer Academy
+          Page</a
+        >
+        <a href="#p147"
+          ><span class="num">12</span> Quick How-To Recap - Media Library
+          Page</a
+        >
       </div>
     </nav>
 
@@ -976,8 +1059,10 @@
           <strong>Merchandise Page</strong>, <strong>Matrimony Page</strong>,
           <strong>Magazine Page</strong>, <strong>Pray For Me Page</strong>,
           <strong>Pray India Page</strong>, <strong>Prayer Tower Page</strong>,
-          <strong>Pray For Mission Page</strong> and
-          <strong>Contact Us Page</strong> — whether it's required,
+          <strong>Pray For Mission Page</strong>,
+          <strong>Contact Us Page</strong>, <strong>Live Stream Page</strong>,
+          <strong>Prayer Academy Page</strong> and
+          <strong>Media Library Page</strong> — whether it's required,
           its default value, allowed values, and what it changes on the live
           site.
           Required / Default values are taken directly from the Strapi schema
@@ -17474,7 +17559,7 @@
         </div>
       </section>
 
-      <section class="part" id="p127" style="border-bottom: none">
+      <section class="part" id="p127">
         <div class="part-kicker">Part 5</div>
         <h2>Quick How-To Recap — Contact Us Page</h2>
         <table class="recap-table">
@@ -17517,6 +17602,1892 @@
           </tbody>
         </table>
       </section>
+      <!-- =============================================================== -->
+      <!-- ============ LIVE STREAM PAGE — PARTS 128-134 ============ -->
+      <!-- =============================================================== -->
+
+      <!-- Summary table -->
+      <section
+        class="part"
+        id="p128"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Live Stream Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          The Live Stream page is composed of the following Single-Type and
+          Collection-Type content types.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Live Stream</td>
+              <td>Single</td>
+              <td><code>/live-stream</code></td>
+              <td>Page shell — <code>pageBase</code> + section order</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Live Stream Banner</td>
+              <td>Single</td>
+              <td><code>/live-stream-banner</code></td>
+              <td>Hero banner — background, tagline, title, description</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Live Stream Register Now</td>
+              <td>Single</td>
+              <td><code>/live-stream-register-now</code></td>
+              <td>Registration call-to-action panel</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Live Stream Check</td>
+              <td>Single</td>
+              <td><code>/live-stream-check</code></td>
+              <td>
+                The on/off switch — one boolean decides whether the page shows
+                a live event or the "catch us live on" fallback
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Live Stream Archive</td>
+              <td>Collection</td>
+              <td><code>/live-stream-archives</code></td>
+              <td>One entry per archived broadcast, browsed via the gallery</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ <b>Don't confuse this with Lives Transformed.</b> The Home Page's
+          <a href="#p12">Lives Transformed section (Part 12)</a> is served by
+          the <code>Live Transform</code>/<code>Live Transform Data</code>
+          content types at <code>/live-transform</code> — a testimony carousel,
+          not part of this Live Stream page at all. The names just happen to
+          both start with "Live".
+        </div>
+      </section>
+
+      <!-- ============ PART 129 — LIVE STREAM (PAGE SHELL) ============ -->
+      <section class="part" id="p129">
+        <div class="part-kicker">Part 1</div>
+        <h2>Live Stream</h2>
+        <span class="endpoint">/live-stream</span>
+        <p class="lede">
+          Single type. Page shell for the Live Stream page — sets the page
+          slug, base metadata and which sections appear, the same idea as Home
+          Page (Part 3) and University (Part 1).
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>liveStream</code></td>
+              <td>Page identifier (uid)</td>
+            </tr>
+            <tr>
+              <td><code>pageBase</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Page Base component below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>pageBase</code>
+            <span class="field-tag">shared.page-base</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>pageTitle</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Browser/page title</td>
+              </tr>
+              <tr>
+                <td><code>slug</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td>—</td>
+                <td>Page identifier</td>
+              </tr>
+              <tr>
+                <td><code>backgroundColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default purple-500)</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>primaryColor</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>— (token default purple-500)</td>
+                <td>Brand Color (1.5)</td>
+              </tr>
+              <tr>
+                <td><code>seo</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  SEO (1.11) — if added, metaTitle + metaDescription become
+                  required
+                </td>
+              </tr>
+              <tr>
+                <td><code>isPublished</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>false</code></td>
+                <td>
+                  Master page flag — <b>set to true</b> or the page is treated
+                  as unpublished
+                </td>
+              </tr>
+              <tr>
+                <td><code>sectionOrder[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>See below</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>sectionOrder[]</code>
+            <span class="field-tag">blocks.section-order</span>
+          </h3>
+          <p class="note">
+            Same repeatable order/enabled/url mechanism used by every other
+            page shell in this manual (see Home Page Part 3 or University Part
+            1 for the full field breakdown). For Live Stream, the sections to
+            order are Live Stream Banner, Live Stream Check and Live Stream
+            Register Now.
+          </p>
+          <div class="callout">
+            Every other page in this manual keys <code>sectionKey</code> as
+            the camelCase of the target content type's own display name (e.g.
+            University Banner → <code>universityBanner</code>). Following that
+            same convention here gives <code>liveStreamBanner</code>,
+            <code>liveStreamCheck</code> and
+            <code>liveStreamRegisterNow</code> — but always copy the exact key
+            from an existing published entry before adding a new row; don't
+            type one from scratch.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 130 — LIVE STREAM BANNER ============ -->
+      <section class="part" id="p130">
+        <div class="part-kicker">Part 2</div>
+        <h2>Live Stream Banner</h2>
+        <span class="endpoint">/live-stream-banner</span>
+        <p class="lede">
+          Hero banner at the top of the Live Stream page — a background
+          (image, color or gradient, with separate desktop/tablet/mobile
+          choices), a tagline, title and description.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>desktop_type</code> / <code>tab_type</code> /
+                <code>mobile_type</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — one per breakpoint</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>liveStreamBanner</code></td>
+              <td>Page identifier (uid)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 131 — LIVE STREAM REGISTER NOW ============ -->
+      <section class="part" id="p131">
+        <div class="part-kicker">Part 3</div>
+        <h2>Live Stream Register Now</h2>
+        <span class="endpoint">/live-stream-register-now</span>
+        <p class="lede">
+          A standalone registration call-to-action panel — background, title,
+          description, a CTA button and an image.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>cta_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Images only</td>
+            </tr>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>liveStreamRegisterNow</code></td>
+              <td>Page identifier (uid)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 132 — LIVE STREAM CHECK ============ -->
+      <section class="part" id="p132">
+        <div class="part-kicker">Part 4</div>
+        <h2>Live Stream Check</h2>
+        <span class="endpoint">/live-stream-check</span>
+        <p class="lede">
+          The single boolean that decides what the Live Stream page shows.
+          <code>live_stream_check = true</code> shows the live event blocks;
+          <code>false</code> shows the "catch us live on" fallback instead.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>live_stream_check</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>false</code></td>
+              <td>The master toggle — see below</td>
+            </tr>
+            <tr>
+              <td><code>live_without_stream</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Shown only when <code>live_stream_check = false</code> — see
+                below
+              </td>
+            </tr>
+            <tr>
+              <td><code>live_stream[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Repeatable. Not schema-gated on the toggle — see the callout
+                below
+              </td>
+            </tr>
+            <tr>
+              <td><code>live_stream_archive</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Archive gallery chrome — see below</td>
+            </tr>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>liveStreamCheck</code></td>
+              <td>Page identifier (uid)</td>
+            </tr>
+            <tr>
+              <td><code>live_services_text</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Description (1.2). Shown only when
+                <code>live_stream_check = true</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>membership_data</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Membership Section — see
+                <a href="#p56">Matrimony Page Part 3</a>. Not gated on the
+                toggle
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          ⚠️ <b><code>live_stream[]</code> has no visibility condition.</b>
+          Unlike <code>live_without_stream</code> and
+          <code>live_services_text</code>, which are only visible when the
+          toggle matches, the repeatable "Live Stream With Event" block always
+          renders/is editable in the admin regardless of
+          <code>live_stream_check</code>. If you're populating both
+          <code>live_without_stream</code> and <code>live_stream[]</code>,
+          make sure only the one matching the current toggle actually has
+          content — the frontend, not the schema, is what hides the wrong one.
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>live_without_stream</code>
+            <span class="field-tag">blocks.live-stream-without-event</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>liveStreamWithoutEvent</code></td>
+                <td>Plain string, not uid</td>
+              </tr>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12)</td>
+              </tr>
+              <tr>
+                <td><code>live_services_text</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>catch_us_live_on</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>catch_us_live_on_image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Images only</td>
+              </tr>
+              <tr>
+                <td><code>date_time</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Next-broadcast date/time</td>
+              </tr>
+              <tr>
+                <td><code>url</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain string — not oEmbed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>live_stream[]</code>
+            <span class="field-tag">blocks.live-stream-check</span>
+            <span class="field-tag">"Live Stream With Event"</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>liveStreamWithEvent</code></td>
+                <td>Plain string, not uid</td>
+              </tr>
+              <tr>
+                <td><code>image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Images only</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>cta_btn</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>live_stream_archive</code>
+            <span class="field-tag">blocks.live-stream-archive</span>
+          </h3>
+          <p class="note">
+            This is the archive gallery's search/pagination chrome, not the
+            archived videos themselves — those live in the
+            <a href="#p133">Live Stream Archive collection type (Part 5)</a>.
+            Same naming clash pattern as University Part 5/Part 3: this
+            component and that collection type share almost the same name but
+            are two different things.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>liveStreamArchive</code></td>
+                <td>Plain string, not uid</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>search</code> / <code>date</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Input Field — search box and date filter</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>select_btn</code> / <code>prev_btn</code> /
+                  <code>next_btn</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — filter apply + pagination controls</td>
+              </tr>
+              <tr>
+                <td><code>pageSize</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>12</code></td>
+                <td>Integer, 1–100 — archive entries per page</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 133 — LIVE STREAM ARCHIVE (COLLECTION) ============ -->
+      <section class="part" id="p133">
+        <div class="part-kicker">Part 5</div>
+        <h2>
+          Live Stream Archive <span class="field-tag">collection type</span>
+        </h2>
+        <span class="endpoint">/live-stream-archives</span>
+        <p class="lede">
+          One entry = one archived broadcast card, browsed through the gallery
+          chrome in Part 4. Cards can double as an "engagement" card — likes,
+          amens, shares, comments — the same field pattern reused almost
+          verbatim by
+          <a href="#p146">Media Library Category (Media Library Page Part 4)</a
+          >.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>uid, no default — set one per entry</td>
+            </tr>
+            <tr>
+              <td><code>live_mode</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Boolean — when <code>true</code>, reveals
+                <code>live_list</code>/<code>live_comment_input_field</code>
+                below
+              </td>
+            </tr>
+            <tr>
+              <td><code>card_image</code> / <code>view_image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Images only — thumbnail and full-view images</td>
+            </tr>
+            <tr>
+              <td><code>video_url</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>oEmbed — Vimeo/YouTube URL</td>
+            </tr>
+            <tr>
+              <td>
+                <code>card_text</code> / <code>card_name</code> /
+                <code>minutes</code> / <code>view_text</code> /
+                <code>breadcrumbs_text</code> / <code>comment_text</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>view_list[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>List Item (1.14), repeatable</td>
+            </tr>
+            <tr>
+              <td><code>watch_list</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                List Item (1.14) — <b>not</b> repeatable here, unlike
+                <code>view_list</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>card_like_icon</code> / <code>card_amen_icon</code> /
+                <code>card_comment_icon</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Icon picker (iconhub)</td>
+            </tr>
+            <tr>
+              <td>
+                <code>like_count</code> / <code>amen_count</code> /
+                <code>share_count</code> / <code>comment_count</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Big integers — no schema default, starts empty</td>
+            </tr>
+            <tr>
+              <td><code>comment_input_field</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Input Field</td>
+            </tr>
+            <tr>
+              <td><code>view_comment_btn</code> / <code>prev_btn</code> /
+                <code>next_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>date_year</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Date Text — styled date/year label on the card</td>
+            </tr>
+            <tr>
+              <td><code>live_list[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                List Item (1.14), repeatable. Shown only when
+                <code>live_mode = true</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>live_comment_input_field</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Input Field. Shown only when <code>live_mode = true</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>Input Field <span class="field-tag">shared.input-field</span></h3>
+          <p class="note">
+            Used by <code>comment_input_field</code>,
+            <code>live_comment_input_field</code> here, and by
+            <code>search</code>/<code>date</code> on the Part 4 gallery chrome.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>type</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>input</code></td>
+                <td>Only one enum value exists today</td>
+              </tr>
+              <tr>
+                <td><code>label</code> / <code>placeholder</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Icon picker (iconhub)</td>
+              </tr>
+              <tr>
+                <td><code>layout</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>full</code></td>
+                <td><code>full half</code></td>
+              </tr>
+              <tr>
+                <td><code>required</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>true</code></td>
+                <td>Whether the visitor must fill it in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          ⚠️ <b>Engagement counts have no default.</b>
+          <code>like_count</code>, <code>amen_count</code>,
+          <code>share_count</code> and <code>comment_count</code> read as
+          empty until you set a starting number — the schema won't seed them
+          at <code>0</code> for you.
+        </div>
+
+        <!-- Live Stream quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p134">
+          <h3>Quick How-To Recap — Live Stream Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Switch the page from live to fallback</td>
+                <td>Live Stream Check → live_stream_check</td>
+                <td>
+                  Toggling this doesn't hide <code>live_stream[]</code> in the
+                  admin — only <code>live_without_stream</code> and
+                  <code>live_services_text</code> are schema-gated
+                </td>
+              </tr>
+              <tr>
+                <td>Set the "catch us live on" fallback</td>
+                <td>
+                  Live Stream Check → live_without_stream →
+                  catch_us_live_on_image / date_time / url
+                </td>
+                <td>Only matters while the toggle is off</td>
+              </tr>
+              <tr>
+                <td>Add a live event card</td>
+                <td>Live Stream Check → live_stream[] → add entry</td>
+                <td>Repeatable — you can stack more than one</td>
+              </tr>
+              <tr>
+                <td>Reorder or hide banner/register-now sections</td>
+                <td>Live Stream → pageBase → sectionOrder</td>
+                <td>Copy <code>sectionKey</code> from an existing entry</td>
+              </tr>
+              <tr>
+                <td>Add an archived broadcast</td>
+                <td>
+                  Live Stream Archive → Create new → card_image / video_url /
+                  card_text
+                </td>
+                <td>
+                  <code>slugName</code> is required with no default — pick a
+                  unique one yourself
+                </td>
+              </tr>
+              <tr>
+                <td>Show a live comment feed on an archive card</td>
+                <td>Live Stream Archive → live_mode = true</td>
+                <td>
+                  Reveals <code>live_list</code> and
+                  <code>live_comment_input_field</code> only
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- ============ PRAYER ACADEMY PAGE — PARTS 135-141 ============ -->
+      <!-- =============================================================== -->
+
+      <section
+        class="part"
+        id="p135"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Prayer Academy Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          Unlike Home Page/Humanitarian/University, Prayer Academy is a
+          <b>single content type built around one dynamic zone</b> — there's
+          no separate Single-Type per section, no
+          <code>pageBase</code>/<code>sectionOrder</code> mechanism, and
+          nothing to browse as a collection.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Prayer Academy</td>
+              <td>Single</td>
+              <td><code>/prayer-academy</code></td>
+              <td>
+                Page shell + <code>sections[]</code> dynamic zone — every
+                block below lives inside it
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          The <code>sections[]</code> dynamic zone also accepts
+          <b>Store Visit</b> (<code>blocks.merchandise-store-visit</code>) —
+          the exact same component documented at
+          <a href="#p50">Merchandise Page Part 5</a>. It's not re-described
+          here since it's identical there.
+        </div>
+      </section>
+
+      <!-- ============ PART 136 — PRAYER ACADEMY (PAGE SHELL) ============ -->
+      <section class="part" id="p136">
+        <div class="part-kicker">Part 1</div>
+        <h2>Prayer Academy</h2>
+        <span class="endpoint">/prayer-academy</span>
+        <p class="lede">
+          Single type. Page metadata plus the <code>sections[]</code> dynamic
+          zone that holds every block on the page, in whatever order you drop
+          them in.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageTitle</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Plain string, not the Page Base component used elsewhere</td>
+            </tr>
+            <tr>
+              <td><code>slug</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>Plain string, not uid</td>
+            </tr>
+            <tr>
+              <td><code>seo</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                SEO (1.11) — if added, metaTitle + metaDescription become
+                required
+              </td>
+            </tr>
+            <tr>
+              <td><code>sections[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Dynamic zone — Banner, Store Visit, Course, Our Direction,
+                About, in any order/quantity
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ <b>No Page Base here.</b> Every other single type in this manual
+          wraps its metadata in <code>shared.page-base</code> (with
+          <code>isPublished</code>, <code>sectionOrder</code>, etc.). Prayer
+          Academy instead has flat <code>pageTitle</code>/<code>slug</code>
+          fields and no publish flag beyond Strapi's own Draft &amp; Publish
+          state — there is no <code>isPublished</code> toggle to also flip.
+        </div>
+      </section>
+
+      <!-- ============ PART 137 — PRAYER ACADEMY BANNER ============ -->
+      <section class="part" id="p137">
+        <div class="part-kicker">Part 2</div>
+        <h2>
+          Prayer Academy Banner
+          <span class="field-tag">blocks.prayer-academy-banner</span>
+        </h2>
+        <p class="lede">
+          Hero banner block — background, tagline, title, description, a
+          stats counter row and a CTA button.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>background_type</code> / <code>tab_type</code> /
+                <code>mobile_type</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — one per breakpoint</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>statsCounters</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Status Counter — see below</td>
+            </tr>
+            <tr>
+              <td><code>cta_btn</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>statsCounters</code>
+            <span class="field-tag">blocks.status-counter</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>background_color</code> / <code>border_color</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color (color-picker customField)</td>
+              </tr>
+              <tr>
+                <td><code>items[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Stats Counter, repeatable — see below</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>items[]</code>
+            <span class="field-tag">shared.stats-counter</span>
+          </h3>
+          <p class="note">
+            A single stat, e.g. "500 M+ Viewers" — same component the Home
+            Page Hero Banner uses for its stats bar.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>text</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1) — the number, e.g. "500 M+"</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2) — the label, e.g. "Viewers"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 138 — PRAYER ACADEMY COURSE ============ -->
+      <section class="part" id="p138">
+        <div class="part-kicker">Part 3</div>
+        <h2>
+          Prayer Academy Course
+          <span class="field-tag">blocks.prayer-academy-course</span>
+        </h2>
+        <p class="lede">
+          Course details block — tagline, title, a short description, a longer
+          rich-text block, a feature list and a CTA, over a configurable
+          background.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code> / <code>rich_text</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Both Description (1.2) components — <code>description</code>
+                for the short intro, <code>rich_text</code> for the longer
+                body copy
+              </td>
+            </tr>
+            <tr>
+              <td><code>list[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>List Item (1.14), repeatable</td>
+            </tr>
+            <tr>
+              <td><code>cta</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td>
+                <code>background_type</code> / <code>tab_type</code> /
+                <code>mobile_type</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12) — one per breakpoint</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 139 — PRAYER ACADEMY OUR DIRECTION ============ -->
+      <section class="part" id="p139">
+        <div class="part-kicker">Part 4</div>
+        <h2>
+          Prayer Academy Our Direction
+          <span class="field-tag">blocks.prayer-academy-our-direction</span>
+        </h2>
+        <p class="lede">
+          A mission-statement block — a repeatable list of mission cards plus
+          one vision block, over a configurable background.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>missions[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Prayer Academy Mission, repeatable — see below</td>
+            </tr>
+            <tr>
+              <td><code>vision</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Prayer Academy Vission — see below (not repeatable, and note
+                the schema's own spelling)
+              </td>
+            </tr>
+            <tr>
+              <td><code>background_type</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Background Type (1.12)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>missions[]</code>
+            <span class="field-tag">blocks.prayer-academy-mission</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12)</td>
+              </tr>
+              <tr>
+                <td><code>label</code> / <code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>color</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Hex color (color-picker customField)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>vision</code>
+            <span class="field-tag">blocks.prayer-academy-vission</span>
+          </h3>
+          <p class="note">
+            ⚠️ Component name is spelled "vission" (double s) in the schema —
+            not a typo you can fix without a migration, just how it's named.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12)</td>
+              </tr>
+              <tr>
+                <td><code>label</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>icon</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Icon picker (iconhub)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 140 — PRAYER ACADEMY ABOUT ============ -->
+      <section class="part" id="p140">
+        <div class="part-kicker">Part 5</div>
+        <h2>
+          Prayer Academy About
+          <span class="field-tag">blocks.prayer-academy-about</span>
+        </h2>
+        <p class="lede">
+          An "about" block — tagline, title, description and a repeatable row
+          of cards.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>card[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Prayer Academy About Card, repeatable — see below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>card[]</code>
+            <span class="field-tag">blocks.prayer-academy-about-card</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>background_type</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12)</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Prayer Academy quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p141">
+          <h3>Quick How-To Recap — Prayer Academy Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add or reorder a section on the page</td>
+                <td>Prayer Academy → sections[]</td>
+                <td>
+                  There's no <code>sectionOrder</code>/<code>enabled</code>
+                  toggle here — order in the dynamic zone list is the display
+                  order, and removing a block removes it from the page
+                </td>
+              </tr>
+              <tr>
+                <td>Change the banner stats row</td>
+                <td>Prayer Academy Banner → statsCounters → items[]</td>
+                <td>Each item needs its own text + description pair</td>
+              </tr>
+              <tr>
+                <td>Add a mission statement</td>
+                <td>Our Direction → missions[] → add entry</td>
+                <td>Repeatable — vision below it is not</td>
+              </tr>
+              <tr>
+                <td>Add an about card</td>
+                <td>Prayer Academy About → card[] → add entry</td>
+                <td>None of the card fields are required</td>
+              </tr>
+              <tr>
+                <td>Reuse the Merchandise store-visit block</td>
+                <td>Prayer Academy → sections[] → Store Visit</td>
+                <td>
+                  Same component as <a href="#p50">Merchandise Page Part 5</a>
+                  — editing it here doesn't touch the Merchandise page's copy
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- =============================================================== -->
+      <!-- ============ MEDIA LIBRARY PAGE — PARTS 142-147 ============ -->
+      <!-- =============================================================== -->
+
+      <section
+        class="part"
+        id="p142"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">Media Library Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          "Media Library" spans more content types than any other page in this
+          manual, and two of them already have write-ups elsewhere — see the
+          callout below before editing anything here.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Media Library</td>
+              <td>Single</td>
+              <td><code>/media-library</code></td>
+              <td>Page shell — <code>pageBase</code> + a dynamic zone</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Media Library Part</td>
+              <td>Single</td>
+              <td><code>/media-library-part</code></td>
+              <td>A second, separate dynamic-zone assembly — see Part 2</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Media Library Category</td>
+              <td>Collection</td>
+              <td><code>/media-library-categories</code></td>
+              <td>One entry per media card, grouped by category</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ <b>Media Library Section and Media Item are documented under Home
+          Page.</b> The tabbed <code>blocks.media-library</code> component,
+          its <code>media-library-section</code> single type, and the
+          <b>Media Item</b> collection it pulls from are all covered in full
+          at <a href="#p8">Home Page Part 8</a> — they aren't repeated here.
+        </div>
+      </section>
+
+      <!-- ============ PART 143 — MEDIA LIBRARY (PAGE SHELL) ============ -->
+      <section class="part" id="p143">
+        <div class="part-kicker">Part 1</div>
+        <h2>Media Library</h2>
+        <span class="endpoint">/media-library</span>
+        <p class="lede">
+          Single type. Page shell with a <code>pageBase</code> and its own
+          <code>sections[]</code> dynamic zone.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>pageBase</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Page Base component — see Home Page Part 3 / University Part 1 for the full field breakdown</td>
+            </tr>
+            <tr>
+              <td><code>sections[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Dynamic zone — see the callout below</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          ⚠️ <b>The dynamic zone only accepts Prayer Academy Banner.</b> As of
+          this schema, <code>sections[]</code> on Media Library is restricted
+          to <code>blocks.prayer-academy-banner</code> (see
+          <a href="#p137">Prayer Academy Part 2</a>) — there's no
+          Media-Library-specific banner block wired in here yet. Also unlike
+          most other page shells, this content type has no
+          <code>i18n</code> plugin option set at all, so check with engineering
+          before assuming per-locale content works on this one.
+        </div>
+      </section>
+
+      <!-- ============ PART 144 — MEDIA LIBRARY PART ============ -->
+      <section class="part" id="p144">
+        <div class="part-kicker">Part 2</div>
+        <h2>Media Library Part</h2>
+        <span class="endpoint">/media-library-part</span>
+        <p class="lede">
+          A second, independent single type — its own
+          <code>sections[]</code> dynamic zone, with no
+          <code>pageBase</code> at all. Not linked to Media Library (Part 1)
+          by the schema; treat it as a separate assembly of blocks rather than
+          "part two" of the same page.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sections[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                Dynamic zone — Media Library Part block, Membership Section
+                (<a href="#p56">Matrimony Page Part 3</a>), Magazine CTA Banner
+                (<a href="#p42">Bible Page Part 2</a>), Media Library Banner —
+                in any order/quantity
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ============ PART 145 — MEDIA LIBRARY BANNER & PART BLOCKS ============ -->
+      <section class="part" id="p145">
+        <div class="part-kicker">Part 3</div>
+        <h2>Media Library Banner &amp; Part Blocks</h2>
+        <p class="lede">
+          The two blocks in Media Library Part's dynamic zone that don't
+          already have a write-up elsewhere.
+        </p>
+
+        <div class="sub">
+          <h3>
+            Media Library Banner
+            <span class="field-tag">blocks.media-library-banner</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>tagline</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Tagline (1.13)</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>background_type</code> / <code>mobile_type</code> /
+                  <code>tab_type</code>
+                </td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Background Type (1.12) — one per breakpoint</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            Media Library Part
+            <span class="field-tag">blocks.media-library-part</span>
+          </h3>
+          <p class="note">
+            ⚠️ Naming clash: this block shares its name with the
+            <a href="#p144">Media Library Part single type (Part 2)</a> that
+            contains it. Two different things, same name.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>category_tab[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1), repeatable — one per category tab label</td>
+              </tr>
+              <tr>
+                <td><code>library_tab[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3), repeatable</td>
+              </tr>
+              <tr>
+                <td><code>prev_btn</code> / <code>next_btn</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Button (1.3) — pagination controls</td>
+              </tr>
+              <tr>
+                <td><code>pageSize</code></td>
+                <td><span class="req-no">No</span></td>
+                <td><code>12</code></td>
+                <td>Integer, 1–100</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 146 — MEDIA LIBRARY CATEGORY (COLLECTION) ============ -->
+      <section class="part" id="p146" style="border-bottom: none">
+        <div class="part-kicker">Part 4</div>
+        <h2>
+          Media Library Category
+          <span class="field-tag">collection type</span>
+        </h2>
+        <span class="endpoint">/media-library-categories</span>
+        <p class="lede">
+          One entry = one media card, grouped by <code>category</code>. This
+          is nearly a field-for-field copy of
+          <a href="#p133">Live Stream Archive (Live Stream Page Part 5)</a> —
+          same engagement chrome (likes, amens, shares, comments) — with a
+          <code>category</code> enum in place of Live Stream Archive's
+          <code>live_mode</code>/<code>live_list</code> fields.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>uid, no default — set one per entry</td>
+            </tr>
+            <tr>
+              <td><code>category</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                <code>Messages Songs Youth Worship Testimonies</code> — note
+                these values are capitalized, unlike the lowercase
+                <code>category</code> enum on Home Page's Media Item (Part 8)
+                or the <code>mediaCategory</code> enum on Media Tab (also Part
+                8). The three lists don't match — don't assume a value that
+                works in one works in another
+              </td>
+            </tr>
+            <tr>
+              <td><code>card_image</code> / <code>view_image</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Images only — thumbnail and full-view images</td>
+            </tr>
+            <tr>
+              <td><code>video_url</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>oEmbed — Vimeo/YouTube URL</td>
+            </tr>
+            <tr>
+              <td>
+                <code>card_text</code> / <code>card_name</code> /
+                <code>minutes</code> / <code>view_text</code> /
+                <code>breadcrumbs_text</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1)</td>
+            </tr>
+            <tr>
+              <td><code>tagline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Tagline (1.13)</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>view_list[]</code> / <code>watch_list</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                List Item (1.14) — <code>view_list</code> is repeatable,
+                <code>watch_list</code> is not
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code>card_like_icon</code> / <code>card_amen_icon</code> /
+                <code>card_comment_icon</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Icon picker (iconhub)</td>
+            </tr>
+            <tr>
+              <td>
+                <code>like_count</code> / <code>amen_count</code> /
+                <code>share_count</code> / <code>comment_count</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Big integers — no schema default, starts empty</td>
+            </tr>
+            <tr>
+              <td><code>comment_input_field</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Input Field (see Live Stream Page Part 5)</td>
+            </tr>
+            <tr>
+              <td>
+                <code>view_comment_btn</code> / <code>prev_btn</code> /
+                <code>next_btn</code>
+              </td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Button (1.3)</td>
+            </tr>
+            <tr>
+              <td><code>date_year</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Date Text — styled date/year label on the card</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          ⚠️ <b>No <code>comment_text</code> or <code>live_mode</code> fields.</b>
+          Unlike Live Stream Archive, this collection type has no live-mode
+          gating and no separate comment-section text field — the schema stops
+          at <code>date_year</code>.
+        </div>
+
+        <!-- Media Library quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p147">
+          <h3>Quick How-To Recap — Media Library Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add or edit a video in the Home Page media grid</td>
+                <td>Media Item collection (see Home Page Part 8)</td>
+                <td>Not this page group — documented under Home Page</td>
+              </tr>
+              <tr>
+                <td>Add a media card grouped by category</td>
+                <td>
+                  Media Library Category → Create new → category / card_image
+                  / video_url
+                </td>
+                <td>
+                  <code>category</code> values are capitalized
+                  (<code>Messages</code>, not <code>messages</code>) — don't
+                  reuse the Media Item category list
+                </td>
+              </tr>
+              <tr>
+                <td>Change the Media Library page banner</td>
+                <td>Media Library → sections[]</td>
+                <td>
+                  Only Prayer Academy Banner is wired into this dynamic zone
+                  today
+                </td>
+              </tr>
+              <tr>
+                <td>Build out Media Library Part's assembly</td>
+                <td>Media Library Part → sections[] → add block</td>
+                <td>
+                  Separate single type from Media Library — not the same page
+                  by schema
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
     </div>
 
     <a href="#overview" class="top-btn" id="topBtn" aria-label="Back to top"
@@ -17689,6 +19660,47 @@
         contactUsSubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // Live Stream Page submenu toggle
+      const liveStreamToggle = document.getElementById("liveStreamToggle");
+      const liveStreamSubmenu = document.getElementById("liveStreamSubmenu");
+      liveStreamToggle.addEventListener("click", () => {
+        const expanded =
+          liveStreamToggle.getAttribute("aria-expanded") === "true";
+        liveStreamToggle.setAttribute("aria-expanded", String(!expanded));
+        liveStreamSubmenu.classList.toggle("collapsed", expanded);
+      });
+
+      // Prayer Academy Page submenu toggle
+      const prayerAcademyToggle = document.getElementById(
+        "prayerAcademyToggle"
+      );
+      const prayerAcademySubmenu = document.getElementById(
+        "prayerAcademySubmenu"
+      );
+      prayerAcademyToggle.addEventListener("click", () => {
+        const expanded =
+          prayerAcademyToggle.getAttribute("aria-expanded") === "true";
+        prayerAcademyToggle.setAttribute("aria-expanded", String(!expanded));
+        prayerAcademySubmenu.classList.toggle("collapsed", expanded);
+      });
+
+      // Media Library Page submenu toggle
+      const mediaLibraryPageToggle = document.getElementById(
+        "mediaLibraryPageToggle"
+      );
+      const mediaLibraryPageSubmenu = document.getElementById(
+        "mediaLibraryPageSubmenu"
+      );
+      mediaLibraryPageToggle.addEventListener("click", () => {
+        const expanded =
+          mediaLibraryPageToggle.getAttribute("aria-expanded") === "true";
+        mediaLibraryPageToggle.setAttribute(
+          "aria-expanded",
+          String(!expanded)
+        );
+        mediaLibraryPageSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -17807,6 +19819,27 @@
                 contactUsSubmenu.classList.remove("collapsed");
               } else {
                 contactUsToggle.classList.remove("active");
+              }
+              if (liveStreamSubmenu.contains(link)) {
+                liveStreamToggle.classList.add("active");
+                liveStreamToggle.setAttribute("aria-expanded", "true");
+                liveStreamSubmenu.classList.remove("collapsed");
+              } else {
+                liveStreamToggle.classList.remove("active");
+              }
+              if (prayerAcademySubmenu.contains(link)) {
+                prayerAcademyToggle.classList.add("active");
+                prayerAcademyToggle.setAttribute("aria-expanded", "true");
+                prayerAcademySubmenu.classList.remove("collapsed");
+              } else {
+                prayerAcademyToggle.classList.remove("active");
+              }
+              if (mediaLibraryPageSubmenu.contains(link)) {
+                mediaLibraryPageToggle.classList.add("active");
+                mediaLibraryPageToggle.setAttribute("aria-expanded", "true");
+                mediaLibraryPageSubmenu.classList.remove("collapsed");
+              } else {
+                mediaLibraryPageToggle.classList.remove("active");
               }
             }
           });
