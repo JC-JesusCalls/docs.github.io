@@ -1005,6 +1005,24 @@
           </div>
         </div>
 
+        <div class="nav-group">
+          <button
+            type="button"
+            class="nav-parent"
+            id="howToVideosToggle"
+            aria-expanded="false"
+            aria-controls="howToVideosSubmenu"
+          >
+            How To Videos Page
+            <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="nav-submenu collapsed" id="howToVideosSubmenu">
+            <a href="#p148"><span class="num">1</span> Content Types Overview</a>
+            <a href="#p149"><span class="num">2</span> How To Vedio</a>
+            <a href="#p150"><span class="num">3</span> About How To Vedio</a>
+          </div>
+        </div>
+
         <div class="sep"></div>
         <a href="#p13"
           ><span class="num">1</span> Quick How-To Recap - Homepage</a
@@ -1044,6 +1062,10 @@
           ><span class="num">12</span> Quick How-To Recap - Media Library
           Page</a
         >
+        <a href="#p151"
+          ><span class="num">13</span> Quick How-To Recap - How To Videos
+          Page</a
+        >
       </div>
     </nav>
 
@@ -1061,8 +1083,9 @@
           <strong>Pray India Page</strong>, <strong>Prayer Tower Page</strong>,
           <strong>Pray For Mission Page</strong>,
           <strong>Contact Us Page</strong>, <strong>Live Stream Page</strong>,
-          <strong>Prayer Academy Page</strong> and
-          <strong>Media Library Page</strong> — whether it's required,
+          <strong>Prayer Academy Page</strong>,
+          <strong>Media Library Page</strong> and
+          <strong>How To Videos Page</strong> — whether it's required,
           its default value, allowed values, and what it changes on the live
           site.
           Required / Default values are taken directly from the Strapi schema
@@ -19301,7 +19324,7 @@
       </section>
 
       <!-- ============ PART 146 — MEDIA LIBRARY CATEGORY (COLLECTION) ============ -->
-      <section class="part" id="p146" style="border-bottom: none">
+      <section class="part" id="p146">
         <div class="part-kicker">Part 4</div>
         <h2>
           Media Library Category
@@ -19482,6 +19505,383 @@
                   Separate single type from Media Library — not the same page
                   by schema
                 </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- =============================================================== -->
+      <!-- ============ HOW TO VIDEOS PAGE — PARTS 148-151 ============ -->
+      <!-- =============================================================== -->
+
+      <section
+        class="part"
+        id="p148"
+        style="border-bottom: 1px solid var(--line); padding-top: 0"
+      >
+        <div class="part-kicker">How To Videos Page — Overview</div>
+        <h2>Content Types</h2>
+        <p class="lede">
+          Unlike most pages in this manual, How To Videos isn't assembled from
+          a page shell plus several single types — it's
+          <b>one single type holding the whole page</b>, plus one collection
+          type for the video library entries themselves.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Content Type</th>
+              <th>Kind</th>
+              <th>API</th>
+              <th>Controls</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>How To Vedio</td>
+              <td>Single</td>
+              <td><code>/how-to-vedio</code></td>
+              <td>
+                The whole page — banner text, primary/secondary videos, FAQ,
+                search and category filters, all in one content type
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>About How To Vedio</td>
+              <td>Collection</td>
+              <td><code>/about-how-to-vedios</code></td>
+              <td>One entry per video in the browsable library</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          ⚠️ <b>Spelled "Vedio" throughout the schema</b> — content type
+          names, component names and field names all use this spelling, not
+          "Video". Not a display typo you can fix from the Content Manager;
+          it's baked into the API IDs.
+        </div>
+      </section>
+
+      <!-- ============ PART 149 — HOW TO VEDIO (THE PAGE) ============ -->
+      <section class="part" id="p149">
+        <div class="part-kicker">Part 1</div>
+        <h2>How To Vedio</h2>
+        <span class="endpoint">/how-to-vedio</span>
+        <p class="lede">
+          Single type. No <code>pageBase</code>, no <code>sectionOrder</code>,
+          no dynamic zone — every field below is a fixed part of this one
+          page.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td><code>howToVedioBanner</code></td>
+              <td>Page identifier (uid)</td>
+            </tr>
+            <tr>
+              <td><code>title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — page banner heading</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Description (1.2)</td>
+            </tr>
+            <tr>
+              <td><code>primary_title</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — heading above the primary video</td>
+            </tr>
+            <tr>
+              <td><code>primary_vedio</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>How To Vedio Card, single — see below</td>
+            </tr>
+            <tr>
+              <td><code>secondary_vedio[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>How To Vedio Card, repeatable — same component as above</td>
+            </tr>
+            <tr>
+              <td><code>faq_layout</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>How To Vedio FAQ — see below</td>
+            </tr>
+            <tr>
+              <td><code>search_inline</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1) — search box placeholder/label</td>
+            </tr>
+            <tr>
+              <td><code>category_name[]</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>Text (1.1), repeatable — one per filter chip/tab</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sub">
+          <h3>
+            <code>primary_vedio</code> / <code>secondary_vedio[]</code>
+            <span class="field-tag">blocks.how-to-vedio-card</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>vimeo_vedio</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Vimeo Video — see below</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>description</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Description (1.2)</td>
+              </tr>
+              <tr>
+                <td><code>category</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Plain string — <b>not</b> the Text (1.1) component used by
+                  every other label-like field on this card. Match it exactly
+                  against a <code>category_name</code> entry above for
+                  filtering to work
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>vimeo_vedio</code>
+            <span class="field-tag">blocks.vimeo-video</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>slugName</code></td>
+                <td><span class="req-yes">Yes</span></td>
+                <td><code>vimeoVideo</code></td>
+                <td>Plain string, not uid</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain text — not the Text (1.1) component</td>
+              </tr>
+              <tr>
+                <td><code>image</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Images only — video thumbnail</td>
+              </tr>
+              <tr>
+                <td><code>media_url</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Plain text — Vimeo URL. Not an oEmbed customField</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sub">
+          <h3>
+            <code>faq_layout</code>
+            <span class="field-tag">blocks.how-to-vedio-faq</span>
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>title</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>Text (1.1)</td>
+              </tr>
+              <tr>
+                <td><code>faq_ques_answer[]</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  FAQ Component, repeatable — same component documented at
+                  <a href="#p126">Contact Us Page → FAQ Section</a>. Each pair
+                  requires both <code>question</code> and <code>answer</code>
+                </td>
+              </tr>
+              <tr>
+                <td><code>background_color</code></td>
+                <td><span class="req-no">No</span></td>
+                <td>—</td>
+                <td>
+                  Background Type (1.12) — despite the field name, this is the
+                  same image/color/gradient component every other page calls
+                  <code>background_type</code>, not a plain hex color
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 150 — ABOUT HOW TO VEDIO (COLLECTION) ============ -->
+      <section class="part" id="p150" style="border-bottom: none">
+        <div class="part-kicker">Part 2</div>
+        <h2>
+          About How To Vedio <span class="field-tag">collection type</span>
+        </h2>
+        <span class="endpoint">/about-how-to-vedios</span>
+        <p class="lede">
+          One entry per video in the How To Videos library — the pool the
+          page's search and category filters browse, separate from the
+          <code>primary_vedio</code>/<code>secondary_vedio</code> cards fixed
+          onto the page itself.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Required</th>
+              <th>Default</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>slugName</code></td>
+              <td><span class="req-yes">Yes</span></td>
+              <td>—</td>
+              <td>uid, no default — set one per entry</td>
+            </tr>
+            <tr>
+              <td><code>vedio</code></td>
+              <td><span class="req-no">No</span></td>
+              <td>—</td>
+              <td>
+                How To Vedio Card — same component as
+                <code>primary_vedio</code> in Part 1, single (not repeatable)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <b>Add a video to the library:</b> Content Manager → About How To
+          Vedio → Create new → set a unique <code>slugName</code> → fill
+          <code>vedio</code> → <code>category</code> inside it must match one
+          of the page's <code>category_name</code> entries → Save → Publish.
+        </div>
+
+        <div class="callout">
+          ⚠️ <b><code>shared.banner-vedio-card</code> exists but is unused.</b>
+          It's a Strapi component with title/description/video fields, but no
+          content type on this page (or anywhere else in the schema)
+          references it — most likely a leftover from an earlier version of
+          this page.
+        </div>
+
+        <!-- How To Videos quick recap -->
+        <div class="sub" style="margin-top: 40px" id="p151">
+          <h3>Quick How-To Recap — How To Videos Page</h3>
+          <table class="recap-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Where</th>
+                <th>Watch out for</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Change the page banner text</td>
+                <td>How To Vedio → title / description</td>
+                <td>None — both plain optional fields</td>
+              </tr>
+              <tr>
+                <td>Swap the featured video</td>
+                <td>How To Vedio → primary_vedio → vimeo_vedio → media_url</td>
+                <td>
+                  <code>media_url</code> is a plain string, not an oEmbed
+                  field — paste the full Vimeo URL
+                </td>
+              </tr>
+              <tr>
+                <td>Add a filter category</td>
+                <td>How To Vedio → category_name[] → add entry</td>
+                <td>
+                  Must exactly match the <code>category</code> string set on
+                  each video card, or filtering that category shows nothing
+                </td>
+              </tr>
+              <tr>
+                <td>Add a video to the browsable library</td>
+                <td>About How To Vedio → Create new</td>
+                <td>
+                  <code>slugName</code> is required with no default — pick a
+                  unique one yourself
+                </td>
+              </tr>
+              <tr>
+                <td>Add or edit an FAQ</td>
+                <td>How To Vedio → faq_layout → faq_ques_answer[]</td>
+                <td>question and answer are both required per pair</td>
               </tr>
             </tbody>
           </table>
@@ -19701,6 +20101,18 @@
         mediaLibraryPageSubmenu.classList.toggle("collapsed", expanded);
       });
 
+      // How To Videos Page submenu toggle
+      const howToVideosToggle = document.getElementById("howToVideosToggle");
+      const howToVideosSubmenu = document.getElementById(
+        "howToVideosSubmenu"
+      );
+      howToVideosToggle.addEventListener("click", () => {
+        const expanded =
+          howToVideosToggle.getAttribute("aria-expanded") === "true";
+        howToVideosToggle.setAttribute("aria-expanded", String(!expanded));
+        howToVideosSubmenu.classList.toggle("collapsed", expanded);
+      });
+
       // Back-to-top visibility
       const topBtn = document.getElementById("topBtn");
       window.addEventListener("scroll", () => {
@@ -19840,6 +20252,13 @@
                 mediaLibraryPageSubmenu.classList.remove("collapsed");
               } else {
                 mediaLibraryPageToggle.classList.remove("active");
+              }
+              if (howToVideosSubmenu.contains(link)) {
+                howToVideosToggle.classList.add("active");
+                howToVideosToggle.setAttribute("aria-expanded", "true");
+                howToVideosSubmenu.classList.remove("collapsed");
+              } else {
+                howToVideosToggle.classList.remove("active");
               }
             }
           });
