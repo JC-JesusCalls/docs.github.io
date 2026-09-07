@@ -1018,8 +1018,8 @@
           </button>
           <div class="nav-submenu collapsed" id="howToVideosSubmenu">
             <a href="#p148"><span class="num">1</span> Content Types Overview</a>
-            <a href="#p149"><span class="num">2</span> How To Vedio</a>
-            <a href="#p150"><span class="num">3</span> About How To Vedio</a>
+            <a href="#p149"><span class="num">2</span> How To Video</a>
+            <a href="#p150"><span class="num">3</span> About How To Video</a>
           </div>
         </div>
 
@@ -16971,7 +16971,7 @@
               <td>—</td>
               <td>
                 <a href="#p1-4">Media component (1.4)</a> — field name
-                spelled as checked in ("vedio")
+                spelled as checked in ("video")
               </td>
             </tr>
             <tr>
@@ -19540,9 +19540,9 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td>How To Vedio</td>
+              <td>How To Video</td>
               <td>Single</td>
-              <td><code>/how-to-vedio</code></td>
+              <td><code>/how-to-video</code></td>
               <td>
                 The whole page — banner text, primary/secondary videos, FAQ,
                 search and category filters, all in one content type
@@ -19550,7 +19550,7 @@
             </tr>
             <tr>
               <td>2</td>
-              <td>About How To Vedio</td>
+              <td>About How To Video</td>
               <td>Collection</td>
               <td><code>/about-how-to-vedios</code></td>
               <td>One entry per video in the browsable library</td>
@@ -19558,7 +19558,7 @@
           </tbody>
         </table>
         <div class="callout">
-          ⚠️ <b>Spelled "Vedio" throughout the schema</b> — content type
+          ⚠️ <b>Spelled "Video" throughout the schema</b> — content type
           names, component names and field names all use this spelling, not
           "Video". Not a display typo you can fix from the Content Manager;
           it's baked into the API IDs.
@@ -19568,8 +19568,8 @@
       <!-- ============ PART 149 — HOW TO VEDIO (THE PAGE) ============ -->
       <section class="part" id="p149">
         <div class="part-kicker">Part 1</div>
-        <h2>How To Vedio</h2>
-        <span class="endpoint">/how-to-vedio</span>
+        <h2>How To Video</h2>
+        <span class="endpoint">/how-to-video</span>
         <p class="lede">
           Single type. No <code>pageBase</code>, no <code>sectionOrder</code>,
           no dynamic zone — every field below is a fixed part of this one
@@ -19614,19 +19614,19 @@
               <td><code>primary_vedio</code></td>
               <td><span class="req-no">No</span></td>
               <td>—</td>
-              <td>How To Vedio Card, single — see below</td>
+              <td>How To Video Card, single — see below</td>
             </tr>
             <tr>
               <td><code>secondary_vedio[]</code></td>
               <td><span class="req-no">No</span></td>
               <td>—</td>
-              <td>How To Vedio Card, repeatable — same component as above</td>
+              <td>How To Video Card, repeatable — same component as above</td>
             </tr>
             <tr>
               <td><code>faq_layout</code></td>
               <td><span class="req-no">No</span></td>
               <td>—</td>
-              <td>How To Vedio FAQ — see below</td>
+              <td>How To Video FAQ — see below</td>
             </tr>
             <tr>
               <td><code>search_inline</code></td>
@@ -19646,7 +19646,7 @@
         <div class="sub">
           <h3>
             <code>primary_vedio</code> / <code>secondary_vedio[]</code>
-            <span class="field-tag">blocks.how-to-vedio-card</span>
+            <span class="field-tag">blocks.how-to-video-card</span>
           </h3>
           <table>
             <thead>
@@ -19737,7 +19737,7 @@
         <div class="sub">
           <h3>
             <code>faq_layout</code>
-            <span class="field-tag">blocks.how-to-vedio-faq</span>
+            <span class="field-tag">blocks.how-to-video-faq</span>
           </h3>
           <table>
             <thead>
@@ -19784,7 +19784,7 @@
       <section class="part" id="p150" style="border-bottom: none">
         <div class="part-kicker">Part 2</div>
         <h2>
-          About How To Vedio <span class="field-tag">collection type</span>
+          About How To Video <span class="field-tag">collection type</span>
         </h2>
         <span class="endpoint">/about-how-to-vedios</span>
         <p class="lede">
@@ -19811,11 +19811,11 @@
               <td>uid, no default — set one per entry</td>
             </tr>
             <tr>
-              <td><code>vedio</code></td>
+              <td><code>video</code></td>
               <td><span class="req-no">No</span></td>
               <td>—</td>
               <td>
-                How To Vedio Card — same component as
+                How To Video Card — same component as
                 <code>primary_vedio</code> in Part 1, single (not repeatable)
               </td>
             </tr>
@@ -19824,13 +19824,13 @@
 
         <div class="callout">
           <b>Add a video to the library:</b> Content Manager → About How To
-          Vedio → Create new → set a unique <code>slugName</code> → fill
-          <code>vedio</code> → <code>category</code> inside it must match one
+          Video → Create new → set a unique <code>slugName</code> → fill
+          <code>video</code> → <code>category</code> inside it must match one
           of the page's <code>category_name</code> entries → Save → Publish.
         </div>
 
         <div class="callout">
-          ⚠️ <b><code>shared.banner-vedio-card</code> exists but is unused.</b>
+          ⚠️ <b><code>shared.banner-video-card</code> exists but is unused.</b>
           It's a Strapi component with title/description/video fields, but no
           content type on this page (or anywhere else in the schema)
           references it — most likely a leftover from an earlier version of
@@ -19851,12 +19851,12 @@
             <tbody>
               <tr>
                 <td>Change the page banner text</td>
-                <td>How To Vedio → title / description</td>
+                <td>How To Video → title / description</td>
                 <td>None — both plain optional fields</td>
               </tr>
               <tr>
                 <td>Swap the featured video</td>
-                <td>How To Vedio → primary_vedio → vimeo_vedio → media_url</td>
+                <td>How To Video → primary_vedio → vimeo_vedio → media_url</td>
                 <td>
                   <code>media_url</code> is a plain string, not an oEmbed
                   field — paste the full Vimeo URL
@@ -19864,7 +19864,7 @@
               </tr>
               <tr>
                 <td>Add a filter category</td>
-                <td>How To Vedio → category_name[] → add entry</td>
+                <td>How To Video → category_name[] → add entry</td>
                 <td>
                   Must exactly match the <code>category</code> string set on
                   each video card, or filtering that category shows nothing
@@ -19872,7 +19872,7 @@
               </tr>
               <tr>
                 <td>Add a video to the browsable library</td>
-                <td>About How To Vedio → Create new</td>
+                <td>About How To Video → Create new</td>
                 <td>
                   <code>slugName</code> is required with no default — pick a
                   unique one yourself
@@ -19880,7 +19880,7 @@
               </tr>
               <tr>
                 <td>Add or edit an FAQ</td>
-                <td>How To Vedio → faq_layout → faq_ques_answer[]</td>
+                <td>How To Video → faq_layout → faq_ques_answer[]</td>
                 <td>question and answer are both required per pair</td>
               </tr>
             </tbody>
